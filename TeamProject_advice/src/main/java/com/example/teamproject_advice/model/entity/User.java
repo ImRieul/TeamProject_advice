@@ -3,6 +3,7 @@ package com.example.teamproject_advice.model.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,7 +27,9 @@ public class User {
     private LocalDateTime registered_at;
     private LocalDateTime unregistered_at;
 
+    @CreatedDate
     private LocalDateTime created_at;
+    
     private String created_by;
     private LocalDateTime updated_at;
     private String updated_by;
