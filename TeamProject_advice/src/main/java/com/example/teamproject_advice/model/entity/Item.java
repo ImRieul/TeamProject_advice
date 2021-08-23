@@ -19,8 +19,8 @@ public class Item {
     private String status;
     private String name;
     private String title;
-    private //TEXT content;
-    private //Decimal price;
+    private String content;
+    private Integer price;
     private String brand_name;
 
     private LocalDateTime registered_at;
