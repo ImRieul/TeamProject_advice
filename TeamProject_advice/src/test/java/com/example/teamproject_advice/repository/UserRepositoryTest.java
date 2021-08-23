@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 public class UserRepositoryTest extends TeamProjectAdviceApplicationTests {
     @Autowired
@@ -25,11 +24,12 @@ public class UserRepositoryTest extends TeamProjectAdviceApplicationTests {
         user.setPhoneNumber("010-2221-1111");
         user.setRegistered_at(LocalDateTime.now());
 
-        user.setCreated_at(LocalDateTime.now());
-        user.setCreated_by("admin");
+//        user.setCreated_at(LocalDateTime.now());
+//        user.setCreated_by("admin");
 
         User newUser = userRepository.save(user);
         Assertions.assertNotNull(newUser);
+        user.toString();
     }
 
     @Test
