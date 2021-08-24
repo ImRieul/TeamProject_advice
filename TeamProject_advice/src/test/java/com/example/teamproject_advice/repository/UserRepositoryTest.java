@@ -25,7 +25,7 @@ public class UserRepositoryTest extends TeamProjectAdviceApplicationTests {
         user.setRegistered_at(LocalDateTime.now());
 
 //        user.setCreated_at(LocalDateTime.now());
-//        user.setCreated_by("admin");
+//        user.setCreated_by("Admin");
 
         User newUser = userRepository.save(user);
         Assertions.assertNotNull(newUser);
