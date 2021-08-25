@@ -3,6 +3,7 @@ package com.example.teamproject_advice.model.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,6 +15,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Data
 @Entity
+@ToString
 public class User {
 
     @Id
@@ -23,12 +25,12 @@ public class User {
     private String password;
     private String status;
     private String phoneNumber;
-    private LocalDateTime registered_at;
-    private LocalDateTime unregistered_at;
+    private LocalDateTime registeredAt;
+    private LocalDateTime unregisteredAt;
 
-    private LocalDateTime created_at;
-    private String created_by;
-    private LocalDateTime updated_at;
-    private String updated_by;
+    private LocalDateTime createdAt;
+    private String createdBy;
+    private LocalDateTime updatedAt;
+    private String updatedBy;
 
 }
