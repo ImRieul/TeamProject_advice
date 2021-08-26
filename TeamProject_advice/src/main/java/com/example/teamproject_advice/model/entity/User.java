@@ -3,17 +3,22 @@ package com.example.teamproject_advice.model.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Data               // getter, setter
 @Entity
+@EntityListeners(AuditingEntityListener.class)
+@ToString
 public class User {
 
     @Id
@@ -23,12 +28,16 @@ public class User {
     private String password;
     private String status;
     private String phoneNumber;
-    private LocalDateTime registered_at;
-    private LocalDateTime unregistered_at;
+    private LocalDateTime registeredAt;
+    private LocalDateTime unregisteredAt;
 
-    private LocalDateTime created_at;
-    private String created_by;
-    private LocalDateTime updated_at;
-    private String updated_by;
+    @CreatedDate
+    private LocalDateTime createdAt;
+    @CreatedBy
+    private String createdBy;
+    @LastModifiedDate
+    private LocalDateTime updatedAt;
+    @LastModifiedBy
+    private String updatedBy;
 
 }
