@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
 
 public class UserRepositoryTest extends TeamProjectAdviceApplicationTests {
 
@@ -25,7 +27,7 @@ public class UserRepositoryTest extends TeamProjectAdviceApplicationTests {
         user1.setRegisteredAt(LocalDateTime.now());
 
         user1.setCreatedAt(LocalDateTime.now());
-        user1.setUpdatedBy("admin01");
+        user1.setCreatedBy("admin01");
 
         User newUser = userRepository.save(user1);
         System.out.println(newUser);
@@ -33,4 +35,42 @@ public class UserRepositoryTest extends TeamProjectAdviceApplicationTests {
         // insert into user values(id, account, ...)
 
     }
+
+    @Test
+    public void read() {
+
+        List<User> userList = userRepository.findAll();
+
+        for (User user : userList) {
+            user.toString();
+        }
+    }
+
+    @Test
+    public void update() {
+        Optional<User> user = userRepository.findById(5L);
+
+        user.ifPresent(u -> {
+            u.setAccount("juyoung");
+            u.setPassword("skdkskdk");
+            u.setUpdatedAt(LocalDateTime.now());
+            u.setUpdatedBy("admin");
+
+            userRepository.save(u);
+
+        });
+
+
+
+    }
+
+    @Test
+    public void delete() {
+        Optional<User> user = userRepository.findById(6L);
+
+        user.ifPresent(u -> {
+            userRepository.delete(u);
+        });
+    }
+
 }

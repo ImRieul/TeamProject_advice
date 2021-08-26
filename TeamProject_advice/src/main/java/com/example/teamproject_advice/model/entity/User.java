@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Data               // getter, setter
 @Entity
-//@EntityListeners(AuditingEntityListener.class)
+@EntityListeners(AuditingEntityListener.class)
 @ToString
 public class User {
 
@@ -31,13 +31,13 @@ public class User {
     private LocalDateTime registeredAt;
     private LocalDateTime unregisteredAt;
 
-//    @CreatedDate
+    @CreatedDate
     private LocalDateTime createdAt;
-//    @CreatedBy
-    private String createdAy;
-//    @LastModifiedDate
+    @CreatedBy
+    private String createdBy;
+    @LastModifiedDate
     private LocalDateTime updatedAt;
-//    @LastModifiedBy
+    @LastModifiedBy
     private String updatedBy;
 
 }

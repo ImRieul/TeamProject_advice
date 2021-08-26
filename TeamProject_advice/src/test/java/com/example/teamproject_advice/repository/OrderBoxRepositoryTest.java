@@ -6,16 +6,19 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 public class OrderBoxRepositoryTest extends TeamProjectAdviceApplicationTests {
 
     @Autowired
     private OrderBoxRepository orderBoxRepository;
 
     @Test
-    @Transactional
-    public void create() {
-        OrderBox orderBox = new OrderBox();
+    public void read() {
+        List<OrderBox> orderBoxList = orderBoxRepository.findAll();
 
-
+        for (OrderBox box : orderBoxList) {
+            box.toString();
+        }
     }
 }
