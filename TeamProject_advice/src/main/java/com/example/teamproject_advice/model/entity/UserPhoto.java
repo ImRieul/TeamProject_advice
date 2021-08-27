@@ -22,6 +22,7 @@ public class UserPhoto {
     private LocalDateTime created_at;
     private String created_by;
 
+
     private Long userId;
 
 }
