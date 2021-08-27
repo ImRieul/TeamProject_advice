@@ -4,32 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="803aebeb-c7ce-46f7-a0c3-a70c7dc9df40" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/controller/UserPhotoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/controller/UserPhotoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/Category.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/Partner.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/Partner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/example/teamproject_advice/repository/CategoryRepositoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/example/teamproject_advice/repository/CategoryRepositoryTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/example/teamproject_advice/repository/ItemRepositoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/example/teamproject_advice/repository/ItemRepositoryTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/example/teamproject_advice/repository/PartnerRepositoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/example/teamproject_advice/repository/PartnerRepositoryTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.example.teamproject_advice.repository.PartnerRepositoryTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.example.teamproject_advice.repository.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/com.example.teamproject_advice.repository.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.example.teamproject_advice.repository.PartnerRepositoryTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/controller/UserPhotoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/controller/UserPhotoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/model/entity/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/model/entity/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/model/entity/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/model/entity/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/model/entity/Partner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/model/entity/Partner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/teamproject_advice/repository/CategoryRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/teamproject_advice/repository/CategoryRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/teamproject_advice/repository/ItemRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/teamproject_advice/repository/ItemRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/teamproject_advice/repository/PartnerRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/teamproject_advice/repository/PartnerRepositoryTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="803aebeb-c7ce-46f7-a0c3-a70c7dc9df40" name="변경" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -193,7 +168,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1629964767124</updated>
-      <workItem from="1629964769032" duration="7574000" />
+      <workItem from="1629964769032" duration="8259000" />
     </task>
     <servers />
   </component>
