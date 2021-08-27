@@ -21,17 +21,17 @@ public class Item {
     private String title;
     private String content;
     private Integer price;
-    private String brand_name;
+    private String brandName;
 
-    private LocalDateTime registered_at;
-    private LocalDateTime unregistered_at;
+    private LocalDateTime registeredAt;
+    private LocalDateTime unregisteredAt;
 
-    private LocalDateTime created_at;
-    private String created_by;
+    private LocalDateTime createdAt;
+    private String createdBy;
 
-    private LocalDateTime updated_at;
-    private String updated_by;
+    private LocalDateTime updatedAt;
+    private String updatedBy;
 
-    private Long partner_id;
+    private Long partnerId;
 
 }

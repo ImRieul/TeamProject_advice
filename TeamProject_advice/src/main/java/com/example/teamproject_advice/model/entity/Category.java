@@ -22,9 +22,9 @@ public class Category {
     private String type;
     private String title;
 
-    private LocalDateTime created_at;
-    private String created_by;
-    private LocalDateTime updated_at;
-    private String updated_by;
+    private LocalDateTime createdAt;
+    private String createdBy;
+    private LocalDateTime updatedAt;
+    private String updatedBy;
 
 }

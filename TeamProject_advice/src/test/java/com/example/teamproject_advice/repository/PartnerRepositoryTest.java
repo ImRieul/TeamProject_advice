@@ -23,17 +23,17 @@ public class PartnerRepositoryTest extends TeamProjectAdviceApplicationTests {
         part1.setName("JYB");
         part1.setStatus("ready");
         part1.setAddress("대전 용문");
-        part1.setCall_center("010-1234-5678");
-        part1.setPartner_number("010-1111-1111");
-        part1.setBusiness_number("1234567891011121");
-        part1.setCeo_name("배쥬용");
+        part1.setCallCenter("010-1234-5678");
+        part1.setPartnerNumber("010-1111-1111");
+        part1.setBusinessNumber("1234567891011121");
+        part1.setCeoName("배쥬용");
 
-        part1.setRegistered_at(LocalDateTime.now());
+        part1.setRegisteredAt(LocalDateTime.now());
 
-        part1.setCreated_at(LocalDateTime.now());
-        part1.setCreated_by("admin01");
+        part1.setCreatedAt(LocalDateTime.now());
+        part1.setCreatedBy("admin01");
 
-        part1.setCategory_id(1L);
+        part1.setCategoryId(1L);
 
         Partner newPartner = partnerRepository.save(part1);
         System.out.println(newPartner);

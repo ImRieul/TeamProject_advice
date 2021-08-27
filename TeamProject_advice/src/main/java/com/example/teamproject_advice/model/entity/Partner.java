@@ -22,20 +22,20 @@ public class Partner {
     private String name;
     private String status;
     private String address;
-    private String call_center;
-    private String partner_number;
-    private String business_number;
-    private String ceo_name;
+    private String callCenter;
+    private String partnerNumber;
+    private String businessNumber;
+    private String ceoName;
 
-    private LocalDateTime registered_at;
-    private LocalDateTime unregistered_at;
+    private LocalDateTime registeredAt;
+    private LocalDateTime unregisteredAt;
 
-    private LocalDateTime created_at;
-    private String created_by;
+    private LocalDateTime createdAt;
+    private String createdBy;
 
-    private LocalDateTime updated_at;
-    private String updated_by;
+    private LocalDateTime updatedAt;
+    private String updatedBy;
 
-    private Long category_id;
+    private Long categoryId;
 
 }

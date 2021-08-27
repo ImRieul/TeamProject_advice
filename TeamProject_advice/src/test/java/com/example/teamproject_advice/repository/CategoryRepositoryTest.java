@@ -22,8 +22,8 @@ public class CategoryRepositoryTest extends TeamProjectAdviceApplicationTests {
         ca1.setType("Jean");
         ca1.setTitle("Pants");
 
-        ca1.setCreated_at(LocalDateTime.now());
-        ca1.setCreated_by("admin01");
+        ca1.setCreatedAt(LocalDateTime.now());
+        ca1.setCreatedBy("admin01");
 
 //        ca1.setUpdated_at(LocalDateTime.now());
 //        ca1.setUpdated_by("");
@@ -45,23 +45,23 @@ public class CategoryRepositoryTest extends TeamProjectAdviceApplicationTests {
         }
     }
 
-    @Test //수정
-    public void update() {
-        Optional<Category> category = categoryRepository.findById(1L);
-
-        category.ifPresent(c -> {
-            c.setType("Jean");
-            c.setTitle("Pants");
-//            c.setAccount("jy");
-//            c.setPassword("1234");
-            c.setUpdated_at(LocalDateTime.now());
-//            c.setUpdatedBy("admin");
-
-            categoryRepository.save(c);
-
-        });
-
-    }
+//    @Test //수정
+//    public void update() {
+//        Optional<Category> category = categoryRepository.findById(1L);
+//
+//        category.ifPresent(c -> {
+//            c.setType("Jean");
+//            c.setTitle("Pants");
+////            c.setAccount("jy");
+////            c.setPassword("1234");
+//            c.setUpdated_at(LocalDateTime.now());
+////            c.setUpdatedBy("admin");
+//
+//            categoryRepository.save(c);
+//
+//        });
+//
+//    }
 //
 //    @Test //삭제
 //    public void delete() {
