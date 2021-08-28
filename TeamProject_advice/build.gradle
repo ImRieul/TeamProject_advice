@@ -20,17 +20,19 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.projectlombok:lombok:1.18.18'
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
-
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // lombok
+    implementation 'org.projectlombok:lombok:1.18.18'
+    annotationProcessor 'org.projectlombok:lombok'
+    // jpa
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-
+    // mysql
     implementation 'mysql:mysql-connector-java'
-
+    // spring boot web : RestController 사용 등
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    // thymeleaf
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 }
 
 test {

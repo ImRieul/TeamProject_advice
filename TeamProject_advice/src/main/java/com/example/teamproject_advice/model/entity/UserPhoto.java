@@ -18,9 +18,9 @@ public class UserPhoto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String file_dir;
-    private LocalDateTime created_at;
-    private String created_by;
+    private String fileDir;
+    private LocalDateTime createdAt;
+    private String createdBy;
 
 
     private Long userId;

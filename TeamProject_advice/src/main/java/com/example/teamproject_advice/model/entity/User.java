@@ -40,5 +40,5 @@ public class User {
     @LastModifiedBy
     private String updatedBy;
 
-    private Long userPhotoId;
+//    private Long userPhotoId;
 }
