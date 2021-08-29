@@ -5,21 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="803aebeb-c7ce-46f7-a0c3-a70c7dc9df40" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/../htmlll/css/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../htmlll/css/z.css" beforeDir="false" afterPath="$PROJECT_DIR$/../htmlll/css/community.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../htmlll/css/z2.css" beforeDir="false" afterPath="$PROJECT_DIR$/../htmlll/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../htmlll/css/z3.css" beforeDir="false" afterPath="$PROJECT_DIR$/../htmlll/css/shop.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../htmlll/css/z4.css" beforeDir="false" afterPath="$PROJECT_DIR$/../htmlll/css/signUp.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../htmlll/css/z5.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../htmlll/first.html" beforeDir="false" afterPath="$PROJECT_DIR$/../htmlll/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../htmlll/fourth.html" beforeDir="false" afterPath="$PROJECT_DIR$/../htmlll/shop.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../htmlll/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/../htmlll/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../htmlll/imgs/z.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../htmlll/imgs/logo.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../htmlll/imgs/zz.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../htmlll/imgs/background.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../htmlll/second.html" beforeDir="false" afterPath="$PROJECT_DIR$/../htmlll/signUp.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../htmlll/third.html" beforeDir="false" afterPath="$PROJECT_DIR$/../htmlll/community.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,8 +64,8 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/repository/UserRepository.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/model/entity/User.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/repository/UserRepository.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
