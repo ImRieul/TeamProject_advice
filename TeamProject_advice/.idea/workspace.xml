@@ -5,9 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="803aebeb-c7ce-46f7-a0c3-a70c7dc9df40" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/../htmlll/css/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../htmlll/css/z.css" beforeDir="false" afterPath="$PROJECT_DIR$/../htmlll/css/z.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../htmlll/z.html" beforeDir="false" afterPath="$PROJECT_DIR$/../htmlll/z.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../htmlll/css/z.css" beforeDir="false" afterPath="$PROJECT_DIR$/../htmlll/css/community.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../htmlll/css/z2.css" beforeDir="false" afterPath="$PROJECT_DIR$/../htmlll/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../htmlll/css/z3.css" beforeDir="false" afterPath="$PROJECT_DIR$/../htmlll/css/shop.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../htmlll/css/z4.css" beforeDir="false" afterPath="$PROJECT_DIR$/../htmlll/css/signUp.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../htmlll/css/z5.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../htmlll/first.html" beforeDir="false" afterPath="$PROJECT_DIR$/../htmlll/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../htmlll/fourth.html" beforeDir="false" afterPath="$PROJECT_DIR$/../htmlll/shop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../htmlll/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/../htmlll/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../htmlll/imgs/z.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../htmlll/imgs/logo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../htmlll/imgs/zz.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../htmlll/imgs/background.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../htmlll/second.html" beforeDir="false" afterPath="$PROJECT_DIR$/../htmlll/signUp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../htmlll/third.html" beforeDir="false" afterPath="$PROJECT_DIR$/../htmlll/community.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +112,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../jyjy/pro30" />
     <property name="project.structure.last.edited" value="프로젝트" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -234,6 +246,7 @@
       <updated>1629964767124</updated>
       <workItem from="1629964769032" duration="8259000" />
       <workItem from="1630027380547" duration="8669000" />
+      <workItem from="1630231373678" duration="1733000" />
     </task>
     <servers />
   </component>
