@@ -17,5 +17,9 @@ public class TestController {
     public String test() {
         return "layout/main_layout";
     }
+    @GetMapping("/header")
+    public String header() {
+        return "fragment/header";
+    }
 
 }
