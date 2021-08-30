@@ -8,18 +8,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 
 public class UserPhotoRepositoryTest extends TeamProjectAdviceApplicationTests {
-
-    @Autowired
-    private UserPhotoRepository userPhotoRepository;
-
-    @Test
-    public void read() {
-        List<UserPhoto> list = userPhotoRepository.findAll();
-
-        list.stream().forEach(v -> {
-            System.out.println("User id : " + v.getUserId());
-        });
-
-    }
+//
+//    @Autowired
+//    private UserPhotoRepository userPhotoRepository;
+//
+//    @Test
+//    public void read() {
+//        List<UserPhoto> list = userPhotoRepository.findAll();
+//
+//        list.stream().forEach(v -> {
+//            System.out.println("User id : " + v.getUserId());
+//        });
+//
+//    }
 
 }

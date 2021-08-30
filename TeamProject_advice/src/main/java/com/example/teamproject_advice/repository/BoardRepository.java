@@ -10,11 +10,11 @@ import java.util.List;
 @Repository
 public interface BoardRepository extends JpaRepository<Board, Long> {
 
-    public List<Board> findByIdGreaterThanOrderByIdDesc(Long id);
+//    public List<Board> findByIdGreaterThanOrderByIdDesc(Long id);
+//
+//    public List<Board> findByTitleContainingOrderByIdDesc(String title);
+//
+//    public List<Board> findByUserContainingOrderByIdDesc(User user);
 
-    public List<Board> findByTitleContainingOrderByIdDesc(String title);
-
-    public List<Board> findByUserContainingOrderByIdDesc(User user);
-
-    public List<Board> findByCreatedAt
+//    public List<Board> findByCreatedAt
 }

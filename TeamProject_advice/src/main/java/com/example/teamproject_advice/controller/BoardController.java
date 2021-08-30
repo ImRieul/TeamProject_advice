@@ -22,7 +22,7 @@ public class BoardController {
         List<Board> boardList = service.boardList();
 
         model.addAllAttributes(boardList);
-        return "/board/list";
+        return "board/list";
 
     }
 }

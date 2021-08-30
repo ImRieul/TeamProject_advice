@@ -1,9 +1,6 @@
 package com.example.teamproject_advice.model.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -13,6 +10,7 @@ import java.time.LocalDateTime;
 @Entity
 @Data
 @ToString
+@Builder
 public class Board {
 
     @Id
@@ -21,13 +19,14 @@ public class Board {
 
     private String title;
     private String content;
+    private Long writer;
 
-    private LocalDateTime registerAt;
+    private LocalDateTime registeredAt;
     private LocalDateTime createdAt;
     private String createdBy;
     private LocalDateTime updatedAt;
     private String updatedBy;
 
-    @ManyToOne
-    private User user;
+//    @ManyToOne
+//    private User user;
 }
