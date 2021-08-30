@@ -4,7 +4,6 @@ import com.example.teamproject_advice.model.entity.User;
 import com.example.teamproject_advice.repository.UserRepository;
 import com.example.teamproject_advice.service.interfaces.UserServiceInterface;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
