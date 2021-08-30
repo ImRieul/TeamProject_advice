@@ -31,9 +31,9 @@ public class BoardRepositoryTest extends TeamProjectAdviceApplicationTests {
 
     @Test
     public void readTest() {
-        List<Board> list = boardRepository.findAll();
+        List<Board> list = boardRepository.findByIdGreaterThanOrderByIdDesc(10L);
         for (Board board : list) {
+            System.out.println(board.getId());
         }
-        return list.toString();
     }
 }

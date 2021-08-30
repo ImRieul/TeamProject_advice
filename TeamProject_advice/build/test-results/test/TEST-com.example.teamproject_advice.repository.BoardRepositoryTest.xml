@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.teamproject_advice.repository.BoardRepositoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-30T06:17:33" hostname="donggeon-kim-ui-MacBookAir.local" time="0.938">
+<testsuite name="com.example.teamproject_advice.repository.BoardRepositoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-30T07:04:06" hostname="donggeon-kim-ui-MacBookAir.local" time="0.498">
   <properties/>
-  <testcase name="create()" classname="com.example.teamproject_advice.repository.BoardRepositoryTest" time="0.938"/>
-  <system-out><![CDATA[15:17:25.438 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
-15:17:25.448 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
-15:17:25.487 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.example.teamproject_advice.repository.BoardRepositoryTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
-15:17:25.500 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.teamproject_advice.repository.BoardRepositoryTest], using SpringBootContextLoader
-15:17:25.504 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.example.teamproject_advice.repository.BoardRepositoryTest]: class path resource [com/example/teamproject_advice/repository/BoardRepositoryTest-context.xml] does not exist
-15:17:25.505 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.example.teamproject_advice.repository.BoardRepositoryTest]: class path resource [com/example/teamproject_advice/repository/BoardRepositoryTestContext.groovy] does not exist
-15:17:25.505 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.example.teamproject_advice.repository.BoardRepositoryTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-15:17:25.506 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.teamproject_advice.repository.BoardRepositoryTest]: BoardRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-15:17:25.580 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.example.teamproject_advice.repository.BoardRepositoryTest]
-15:17:25.672 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/DongGeon_KIm/my/teamProject_advice/TeamProject_advice/build/classes/java/main/com/example/teamproject_advice/TeamProjectAdviceApplication.class]
-15:17:25.675 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.teamproject_advice.TeamProjectAdviceApplication for test class com.example.teamproject_advice.repository.BoardRepositoryTest
-15:17:25.798 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.example.teamproject_advice.repository.BoardRepositoryTest]: using defaults.
-15:17:25.801 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-15:17:25.817 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@64393849, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3e12ad2a, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@6d8d645b, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@52229d, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2d84a9ae, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6542ac9, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7d29e4, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@11aaa5bc, org.springframework.test.context.event.EventPublishingTestExecutionListener@196ba7fe, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3e4ed478, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@5795f85c, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@13d63057, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@57462184, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@1f63d200, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@67cc8ea8]
-15:17:25.821 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@7649274a testClass = BoardRepositoryTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7e954453 testClass = BoardRepositoryTest, locations = '{}', classes = '{class com.example.teamproject_advice.TeamProjectAdviceApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@24546209, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@605c6183, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@3c48ae08, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@6a6a2efa, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3be4f0ea, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@e74f9aa], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
-15:17:25.879 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
+  <testcase name="readTest()" classname="com.example.teamproject_advice.repository.BoardRepositoryTest" time="0.498"/>
+  <system-out><![CDATA[16:03:58.597 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+16:03:58.608 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+16:03:58.655 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.example.teamproject_advice.repository.BoardRepositoryTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+16:03:58.668 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.teamproject_advice.repository.BoardRepositoryTest], using SpringBootContextLoader
+16:03:58.673 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.example.teamproject_advice.repository.BoardRepositoryTest]: class path resource [com/example/teamproject_advice/repository/BoardRepositoryTest-context.xml] does not exist
+16:03:58.674 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.example.teamproject_advice.repository.BoardRepositoryTest]: class path resource [com/example/teamproject_advice/repository/BoardRepositoryTestContext.groovy] does not exist
+16:03:58.674 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.example.teamproject_advice.repository.BoardRepositoryTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+16:03:58.675 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.teamproject_advice.repository.BoardRepositoryTest]: BoardRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:03:58.754 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.example.teamproject_advice.repository.BoardRepositoryTest]
+16:03:58.845 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/DongGeon_KIm/my/teamProject_advice/TeamProject_advice/build/classes/java/main/com/example/teamproject_advice/TeamProjectAdviceApplication.class]
+16:03:58.847 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.teamproject_advice.TeamProjectAdviceApplication for test class com.example.teamproject_advice.repository.BoardRepositoryTest
+16:03:58.960 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.example.teamproject_advice.repository.BoardRepositoryTest]: using defaults.
+16:03:58.961 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+16:03:58.974 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6d8d645b, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@52229d, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@2d84a9ae, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6542ac9, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7d29e4, org.springframework.test.context.support.DirtiesContextTestExecutionListener@11aaa5bc, org.springframework.test.context.transaction.TransactionalTestExecutionListener@196ba7fe, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3e4ed478, org.springframework.test.context.event.EventPublishingTestExecutionListener@5795f85c, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@13d63057, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@57462184, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@1f63d200, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@67cc8ea8, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@45ba5e8e, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@23961dbc]
+16:03:58.977 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@70907d3c testClass = BoardRepositoryTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@52f8ace1 testClass = BoardRepositoryTest, locations = '{}', classes = '{class com.example.teamproject_advice.TeamProjectAdviceApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@1ba0b56e, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@7926b74d, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@2de896c1, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@24d4cd55, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@aa88f24, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@718668d], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+16:03:59.040 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -27,120 +27,212 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v2.5.3)
 
-2021-08-30 15:17:26.281  INFO 35287 --- [    Test worker] c.e.t.repository.BoardRepositoryTest     : Starting BoardRepositoryTest using Java 16.0.1 on donggeon-kim-ui-MacBookAir.local with PID 35287 (started by DongGeon_kim in /Users/DongGeon_KIm/my/teamProject_advice/TeamProject_advice)
-2021-08-30 15:17:26.287  INFO 35287 --- [    Test worker] c.e.t.repository.BoardRepositoryTest     : No active profile set, falling back to default profiles: default
-2021-08-30 15:17:27.704  INFO 35287 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-08-30 15:17:27.817  INFO 35287 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 105 ms. Found 8 JPA repository interfaces.
-2021-08-30 15:17:28.832  INFO 35287 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-08-30 15:17:28.995  INFO 35287 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-08-30 15:17:29.095  INFO 35287 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-08-30 15:17:29.204  INFO 35287 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2021-08-30 15:17:29.352  INFO 35287 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-08-30 15:17:29.470  INFO 35287 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2021-08-30 15:17:30.317  INFO 35287 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-08-30 15:17:30.327  INFO 35287 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-08-30 15:17:31.251  WARN 35287 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-08-30 15:17:33.263  INFO 35287 --- [    Test worker] c.e.t.repository.BoardRepositoryTest     : Started BoardRepositoryTest in 7.381 seconds (JVM running for 9.234)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into board (content, created_at, created_by, registered_at, title, updated_at, updated_by, writer) values (?, ?, ?, ?, ?, ?, ?, ?)
+2021-08-30 16:03:59.438  INFO 36806 --- [    Test worker] c.e.t.repository.BoardRepositoryTest     : Starting BoardRepositoryTest using Java 16.0.1 on donggeon-kim-ui-MacBookAir.local with PID 36806 (started by DongGeon_kim in /Users/DongGeon_KIm/my/teamProject_advice/TeamProject_advice)
+2021-08-30 16:03:59.443  INFO 36806 --- [    Test worker] c.e.t.repository.BoardRepositoryTest     : No active profile set, falling back to default profiles: default
+2021-08-30 16:04:00.946  INFO 36806 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-30 16:04:01.143  INFO 36806 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 190 ms. Found 8 JPA repository interfaces.
+2021-08-30 16:04:02.058  INFO 36806 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-30 16:04:02.221  INFO 36806 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-30 16:04:02.325  INFO 36806 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-30 16:04:02.435  INFO 36806 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-08-30 16:04:02.588  INFO 36806 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-08-30 16:04:02.703  INFO 36806 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-08-30 16:04:03.593  INFO 36806 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-30 16:04:03.613  INFO 36806 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-30 16:04:05.011  WARN 36806 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-30 16:04:06.395  INFO 36806 --- [    Test worker] c.e.t.repository.BoardRepositoryTest     : Started BoardRepositoryTest in 7.347 seconds (JVM running for 8.98)
+Hibernate: select board0_.id as id1_0_, board0_.content as content2_0_, board0_.created_at as created_3_0_, board0_.created_by as created_4_0_, board0_.registered_at as register5_0_, board0_.title as title6_0_, board0_.updated_at as updated_7_0_, board0_.updated_by as updated_8_0_, board0_.writer as writer9_0_ from board board0_ where board0_.id>? order by board0_.id desc
+201
+200
+199
+198
+197
+196
+195
+194
+193
+192
+191
+190
+189
+188
+187
+186
+185
+184
+183
+182
+181
+180
+179
+178
+177
+176
+175
+174
+173
+172
+171
+170
+169
+168
+167
+166
+165
+164
+163
+162
+161
+160
+159
+158
+157
+156
+155
+154
+153
+152
+151
+150
+149
+148
+147
+146
+145
+144
+143
+142
+141
+140
+139
+138
+137
+136
+135
+134
+133
+132
+131
+130
+129
+128
+127
+126
+125
+124
+123
+122
+121
+120
+119
+118
+117
+116
+115
+114
+113
+112
+111
+110
+109
+108
+107
+106
+105
+104
+103
+102
+101
+100
+99
+98
+97
+96
+95
+94
+93
+92
+91
+90
+89
+88
+87
+86
+85
+84
+83
+82
+81
+80
+79
+78
+77
+76
+75
+74
+73
+72
+71
+70
+69
+68
+67
+66
+65
+64
+63
+62
+61
+60
+59
+58
+57
+56
+55
+54
+53
+52
+51
+50
+49
+48
+47
+46
+45
+44
+43
+42
+41
+40
+39
+38
+37
+36
+35
+34
+33
+32
+31
+30
+29
+28
+27
+26
+25
+24
+23
+22
+21
+20
+19
+18
+17
+16
+15
+14
+13
+12
+11
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface BoardServiceInterface {
     List<Board> boardList();
+    Board findById(Long id);
 }

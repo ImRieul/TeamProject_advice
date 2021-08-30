@@ -13,7 +13,7 @@ public class TestController {
         return "home";
     }
 
-    @GetMapping("/test")
+    @GetMapping("/list")
     public String test() {
         return "board/list";
     }

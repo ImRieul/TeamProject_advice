@@ -19,4 +19,9 @@ public class BoardService implements BoardServiceInterface {
     public List<Board> boardList() {
         return boardRepository.findAll();
     }
+
+    @Override
+    public Board findById(Long id) {
+        return boardRepository.findById(id).orElse(null);
+    }
 }
