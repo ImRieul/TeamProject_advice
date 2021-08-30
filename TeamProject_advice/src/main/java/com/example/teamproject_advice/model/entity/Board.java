@@ -20,12 +20,14 @@ public class Board {
     private Long id;
     private String title;
     private String content;
-    private LocalDateTime registerAt;
+    private LocalDateTime registeredAt;
+    private Long writer;
+
     private LocalDateTime createdAt;
     private String createdBy;
     private LocalDateTime updatedAt;
     private String updatedBy;
 
-    @ManyToOne
-    private User user;
+//    @ManyToOne
+//    private User user;
 }

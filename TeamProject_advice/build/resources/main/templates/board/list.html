@@ -7,8 +7,8 @@
   <title>board</title>
   <meta charset="UTF-8">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <!-- <link rel="stylesheet" href="../../static/css/style.css" th:href="@{/css/style.css}"> -->
   <link rel="stylesheet" href="../../static/css/board/list.css" th:href="@{/css/board/list.css}">
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
 <body>
@@ -48,103 +48,21 @@
                 <th scope="col">등록일</th>
                 <th scope="col" class="tnone">조회수</th>
                 </thead>
-                <tbody>
-                <tr>
-                  <td class="tnone">1</td>
-                  <td class="left">
-                    <a href="#">쟈뎅 전문 쇼핑몰 쟈뎅샵이 리뉴얼 오픈합니다.</a>
-                    <img src="../images/ico/ico_new.gif" alt="NEW" />
+
+                <tr th:if="${#lists.isEmpty(list)}">
+                  <td colspan="4">
+                    작성된 글이 없습니다
                   </td>
-                  <td>14-01-28</td>
-                  <td class="tnone right">9999</td>
                 </tr>
 
-                <tr>
-                  <td class="tnone">2</td>
-                  <td class="left">
-                    <a href="#" class="lightgray">쟈뎅 전문 쇼핑몰 쟈뎅샵이 리뉴얼 오픈합니다.</a>
-                  </td>
-                  <td>14-01-28</td>
-                  <td class="tnone right">9999</td>
+                <tr th:each="board : ${list}">
+                  <td class="tnone" th:text="${board.id}"></td>
+                  <td class="left"><a href="#" th:href="@{/}" th:text="${board.title}"></a></td>
+                  <td class="tnone right" th:text="${#temporals.format(board.registeredAt, 'yyyy-MM-dd HH:mm')}"></td>
+                  <td th:text="${board.writer}"></td>
                 </tr>
-
-                <tr>
-                  <td class="tnone">3</td>
-                  <td class="left">
-                    <a href="#" class="lightgray">쟈뎅 전문 쇼핑몰 쟈뎅샵이 리뉴얼 오픈합니다.</a>
-                  </td>
-                  <td>14-01-28</td>
-                  <td class="tnone right">9999</td>
-                </tr>
-
-                <tr>
-                  <td class="tnone">4</td>
-                  <td class="left">
-                    <a href="#" class="lightgray">쟈뎅 전문 쇼핑몰 쟈뎅샵이 리뉴얼 오픈합니다.</a>
-                  </td>
-                  <td>14-01-28</td>
-                  <td class="tnone right">9999</td>
-                </tr>
-
-                <tr>
-                  <td class="tnone">5</td>
-                  <td class="left">
-                    <a href="#" class="lightgray">쟈뎅 전문 쇼핑몰 쟈뎅샵이 리뉴얼 오픈합니다.</a>
-                  </td>
-                  <td>14-01-28</td>
-                  <td class="tnone right">9999</td>
-                </tr>
-
-                <tr>
-                  <td class="tnone">6</td>
-                  <td class="left">
-                    <a href="#" class="lightgray">쟈뎅 전문 쇼핑몰 쟈뎅샵이 리뉴얼 오픈합니다.</a>
-                  </td>
-                  <td>14-01-28</td>
-                  <td class="tnone right">9999</td>
-                </tr>
-
-                <tr>
-                  <td class="tnone">7</td>
-                  <td class="left">
-                    <a href="#" class="lightgray">쟈뎅 전문 쇼핑몰 쟈뎅샵이 리뉴얼 오픈합니다.</a>
-                  </td>
-                  <td>14-01-28</td>
-                  <td class="tnone right">9999</td>
-                </tr>
-
-                <tr>
-                  <td class="tnone">8</td>
-                  <td class="left">
-                    <a href="#" class="lightgray">쟈뎅 전문 쇼핑몰 쟈뎅샵이 리뉴얼 오픈합니다.</a>
-                  </td>
-                  <td>14-01-28</td>
-                  <td class="tnone right">9999</td>
-                </tr>
-
-                <tr>
-                  <td class="tnone">9</td>
-                  <td class="left">
-                    <a href="#" class="lightgray">쟈뎅 전문 쇼핑몰 쟈뎅샵이 리뉴얼 오픈합니다.</a>
-                  </td>
-                  <td>14-01-28</td>
-                  <td class="tnone right">9999</td>
-                </tr>
-
-                <tr>
-                  <td class="tnone">10</td>
-                  <td class="left">
-                    <a href="#" class="lightgray">쟈뎅 전문 쇼핑몰 쟈뎅샵이 리뉴얼 오픈합니다.</a>
-                  </td>
-                  <td>14-01-28</td>
-                  <td class="tnone right">9999</td>
-                </tr>
-                </tbody>
               </table>
             </div>
-
-
-
             <div class="btnAreaList">
               <!-- 페이징이동1 -->
               <div class="allPageMoving1">
