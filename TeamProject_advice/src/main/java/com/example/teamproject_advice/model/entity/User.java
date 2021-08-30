@@ -12,6 +12,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -41,4 +42,7 @@ public class User {
     private String updatedBy;
 
 //    private Long userPhotoId;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    private List<Board> board;
 }
