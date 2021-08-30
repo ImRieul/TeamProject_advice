@@ -1,6 +1,7 @@
 package com.example.teamproject_advice.model.entity;
 
 import lombok.*;
+import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -11,6 +12,7 @@ import java.time.LocalDateTime;
 @Data
 @ToString
 @Builder
+@Accessors(chain = true)
 public class Board {
 
     @Id

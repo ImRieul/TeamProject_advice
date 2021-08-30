@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class BoardRepositoryTest extends TeamProjectAdviceApplicationTests {
 
@@ -26,5 +27,13 @@ public class BoardRepositoryTest extends TeamProjectAdviceApplicationTests {
 
             boardRepository.save(board);
         }
+    }
+
+    @Test
+    public void readTest() {
+        List<Board> list = boardRepository.findAll();
+        for (Board board : list) {
+        }
+        return list.toString();
     }
 }

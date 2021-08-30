@@ -21,7 +21,7 @@ public class BoardController {
     public String test(Model model) {
         List<Board> boardList = service.boardList();
 
-        model.addAllAttributes(boardList);
+        model.addAttribute("list", boardList);
         return "board/list";
 
     }
