@@ -15,7 +15,7 @@ public class TestController {
 
     @GetMapping("/test")
     public String test() {
-        return "layout/main_layout";
+        return "board/list";
     }
     @GetMapping("/header")
     public String header() {
