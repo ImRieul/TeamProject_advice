@@ -49,6 +49,7 @@ public class UserRepositoryTest extends TeamProjectAdviceApplicationTests {
 
         user.ifPresent(user1 -> {
             System.out.println("user account : " + user1.getAccount());
+            System.out.println("user board : " + user1.getBoardList().get(0));
         });
 
     }

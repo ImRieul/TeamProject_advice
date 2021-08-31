@@ -43,6 +43,6 @@ public class User {
 
 //    private Long userPhotoId;
 
-//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-//    private List<Board> boardList;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    private List<Board> boardList;
 }

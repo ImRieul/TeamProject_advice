@@ -29,6 +29,6 @@ public class Board {
     private LocalDateTime updatedAt;
     private String updatedBy;
 
-//    @ManyToOne
-//    private User user;
+    @ManyToOne
+    private User user;
 }
