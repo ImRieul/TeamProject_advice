@@ -23,8 +23,13 @@ public class BoardController {
     private final BoardService service;
 
     @GetMapping("/list")
-    public String list(Model model, Pageable pageable) {
-        Page<Board> boardList = service.boardList(pageable);
+//    public String list(Model model, Pageable pageable) {
+    public String list(@RequestParam("page") int page,
+                       @RequestParam("size") int size,
+                       @RequestParam("sort") String id,
+                       Model model) {
+
+        Page<Board> boardList = service.boardList(PageRequest.of(page, size, Sort.Direction.DESC, id));
         model.addAttribute("list", boardList);
         return "board/list";
     }
