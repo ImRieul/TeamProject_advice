@@ -4,7 +4,6 @@ import com.example.teamproject_advice.TeamProjectAdviceApplicationTests;
 import com.example.teamproject_advice.model.entity.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -38,7 +37,6 @@ public class UserRepositoryTest extends TeamProjectAdviceApplicationTests {
     }
 
     @Test
-    @Transactional
     public void read() {
 
 //        List<User> userList = userRepository.findAll();
@@ -51,7 +49,7 @@ public class UserRepositoryTest extends TeamProjectAdviceApplicationTests {
 
         user.ifPresent(user1 -> {
             System.out.println("user account : " + user1.getAccount());
-            System.out.println("user board : " + user1.getBoardList().get(1));
+            System.out.println("user board : " + user1.getBoardList().get(0));
         });
 
     }
