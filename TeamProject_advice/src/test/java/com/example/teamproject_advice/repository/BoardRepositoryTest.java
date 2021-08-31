@@ -23,7 +23,7 @@ public class BoardRepositoryTest extends TeamProjectAdviceApplicationTests {
 
     @Test
     public void create() {
-        for (int i=0; i<100; i++) {
+        for (int i=1; i<100; i++) {
             Board board = Board.builder()
                             .title(i + "번째 게시글")
                             .content(i + "번째 게시글입니다.")
@@ -53,6 +53,15 @@ public class BoardRepositoryTest extends TeamProjectAdviceApplicationTests {
 
         for (Board board : boardPage) {
             System.out.println("board title : " + board.getTitle());
+        }
+    }
+
+    @Test
+    public void deleteAll() {
+        List<Board> list = boardRepository.findAll();
+
+        for (Board board : list) {
+            boardRepository.delete(board);
         }
     }
 }
