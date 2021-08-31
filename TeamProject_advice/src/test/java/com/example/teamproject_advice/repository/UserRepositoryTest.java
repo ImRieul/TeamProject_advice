@@ -39,11 +39,18 @@ public class UserRepositoryTest extends TeamProjectAdviceApplicationTests {
     @Test
     public void read() {
 
-        List<User> userList = userRepository.findAll();
+//        List<User> userList = userRepository.findAll();
+//
+//        for (User user : userList) {
+//            user.toString();
+//        }
 
-        for (User user : userList) {
-            user.toString();
-        }
+        Optional<User> user = userRepository.findById(1L);
+
+        user.ifPresent(user1 -> {
+            System.out.println("user account : " + user1.getAccount());
+        });
+
     }
 
     @Test

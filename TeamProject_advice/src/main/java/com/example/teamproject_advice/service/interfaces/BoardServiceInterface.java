@@ -7,4 +7,5 @@ import java.util.List;
 public interface BoardServiceInterface {
     List<Board> boardList();
     Board findById(Long id);
+    List<Board> boardPageList(int i);
 }

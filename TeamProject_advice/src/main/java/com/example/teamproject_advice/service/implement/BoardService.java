@@ -24,4 +24,11 @@ public class BoardService implements BoardServiceInterface {
     public Board findById(Long id) {
         return boardRepository.findById(id).orElse(null);
     }
+
+    @Override
+    public List<Board> boardPageList(int i) {
+
+
+        return boardPageList;
+    }
 }

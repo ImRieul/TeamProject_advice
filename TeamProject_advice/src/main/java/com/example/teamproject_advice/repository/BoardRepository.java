@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface BoardRepository extends JpaRepository<Board, Long> {
 
-    public List<Board> findByIdGreaterThanOrderByIdDesc(Long id);
+    public List<Board> findByIdLessThanAndIdGreaterThanEqualOrderByIdDesc(Long t, Long f);
 //
 //    public List<Board> findByTitleContainingOrderByIdDesc(String title);
 //
