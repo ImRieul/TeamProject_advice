@@ -17,6 +17,7 @@
 
       <div id="customer">
         <div class="viewDivMt">
+
           <div class="viewHead">
             <div class="subject">
               <ul>
@@ -30,8 +31,23 @@
 
           <div class="viewContents" >
             <scan th:text="${detail.content}"></scan>
-
           </div>
+
+          <!-- 답변 -->
+          <div class="answer">
+            <div class="inbox">
+              <div class="aname">
+                <p th:text="${detail.getUser().getAccount()}">
+                  <span>[2014-03-04&nbsp;&nbsp;15:01:59]</span>
+                </p>
+              </div>
+
+              <div class="atxt" th:text="${detail.getContent()}">
+              </div>
+            </div>
+          </div>
+          <!-- //답변 -->
+
         </div>
 
 
@@ -46,12 +62,12 @@
             <tbody>
             <tr>
               <th class="pre">PREV</th>
-              <td><a href="#">상품 재입고는 언제 되나요?</a></td>
+              <td><a href="#">이전 글이 없습니다.</a></td>
             </tr>
 
             <tr>
               <th class="next">NEXT</th>
-              <td>다음 글이 없습니다.</td>
+              <td>98번째 게시글</td>
             </tr>
             </tbody>
           </table>

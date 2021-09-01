@@ -2,6 +2,7 @@ package com.example.teamproject_advice.repository;
 
 import com.example.teamproject_advice.TeamProjectAdviceApplicationTests;
 import com.example.teamproject_advice.model.entity.Board;
+import com.example.teamproject_advice.model.entity.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -9,16 +10,17 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
-import java.awt.print.PageFormat;
-import java.awt.print.Printable;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 public class BoardRepositoryTest extends TeamProjectAdviceApplicationTests {
 
     @Autowired
     private BoardRepository boardRepository;
+    @Autowired
+    private UserRepository userRepository;
+
+
     protected PageRequest pageRequest;
 
     @Test
@@ -31,9 +33,24 @@ public class BoardRepositoryTest extends TeamProjectAdviceApplicationTests {
                             .registeredAt(LocalDateTime.now())
                             .createdAt(LocalDateTime.now())
                             .createdBy("admin")
+                            .user(userRepository.findAll().get(0))
                             .build();
 
             boardRepository.save(board);
+        }
+    }
+
+    @Test
+    public void read() {
+//        System.out.println(userRepository.findAll().get(0));
+
+        List<User> list = userRepository.findAll();
+        list.get(0);
+
+        // [User1, User2, User3, User4].get(0)
+
+        for (User u : list) {
+            System.out.println(u);
         }
     }
 

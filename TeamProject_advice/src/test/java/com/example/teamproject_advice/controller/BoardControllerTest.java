@@ -31,6 +31,7 @@ public class BoardControllerTest {
 
     @Test
     public void test() throws Exception{
+
         MultiValueMap<String, String> info = new LinkedMultiValueMap<>();
         info.add("page", "2");
         info.add("size", "10");
@@ -43,7 +44,4 @@ public class BoardControllerTest {
                 .andExpect(handler().methodName("list"));
 
     }
-
-
-
 }

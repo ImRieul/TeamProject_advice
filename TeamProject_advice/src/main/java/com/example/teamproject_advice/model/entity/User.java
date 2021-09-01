@@ -1,9 +1,7 @@
 package com.example.teamproject_advice.model.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
+import lombok.experimental.Accessors;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -19,7 +17,9 @@ import java.util.List;
 @Data               // getter, setter
 @Entity
 @EntityListeners(AuditingEntityListener.class)
-@ToString
+@ToString(exclude = {"boardList"})
+@Builder
+@Accessors(chain = true)
 public class User {
 
     @Id
