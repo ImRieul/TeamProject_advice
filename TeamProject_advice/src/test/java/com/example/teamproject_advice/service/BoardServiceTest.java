@@ -10,10 +10,10 @@ public class BoardServiceTest extends TeamProjectAdviceApplicationTests {
     @Autowired
     private BoardService service;
 
-    @Test
-    public void pagingTest() {
-        for (Integer i : service.paging(5)) {
-            System.out.println(i);
-        }
-    }
+//    @Test
+//    public void pagingTest() {
+//        for (Integer i : service.paging(5)) {
+//            System.out.println(i);
+//        }
+//    }
 }

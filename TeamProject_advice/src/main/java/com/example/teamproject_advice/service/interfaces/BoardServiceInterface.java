@@ -7,7 +7,10 @@ import org.springframework.data.domain.Pageable;
 import java.util.List;
 
 public interface BoardServiceInterface {
-    Page<Board> boardList(Pageable pageable);
+    Page<Board> boardListPage(Pageable pageable);
+    int boardListLastPage(int size);
+    Pageable checkPageable(Pageable pageable);
     Board findById(Long id);
-    List<Integer> paging(int i);
+    List<Integer> paging(Pageable pageable);
+    int returnPageNumber(Long id, int size);
 }
