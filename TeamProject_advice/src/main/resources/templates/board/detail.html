@@ -7,7 +7,7 @@
   <title>board</title>
   <meta charset="UTF-8">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <link rel="stylesheet" href="../../static/css/board/detail.css" th:href="@{/css/board/list.css}">
+  <link rel="stylesheet" href="../../static/css/board/list.css" th:href="@{/css/board/list.css}">
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
@@ -30,23 +30,21 @@
           </div>
 
           <div class="viewContents" >
-            <scan th:text="${detail.content}"></scan>
+            <scan th:text="${board.content}"></scan>
           </div>
 
-          <!-- 답변 -->
+          <!-- 댓글 -->
           <div class="answer">
             <div class="inbox">
               <div class="aname">
-                <p th:text="${detail.getUser().getAccount()}">
-                  <span>[2014-03-04&nbsp;&nbsp;15:01:59]</span>
-                </p>
+                <p th:text="${board.getUser().getAccount()}"></p>
+                <span th:text="${comment.get('registeredAt')}"></span>
               </div>
 
-              <div class="atxt" th:text="${detail.getContent()}">
-              </div>
+              <span class="atxt" th:text="${comment.get('comment')}"></span>
             </div>
           </div>
-          <!-- //답변 -->
+          <!-- 댓글 -->
 
         </div>
 
@@ -61,13 +59,19 @@
             </colgroup>
             <tbody>
             <tr>
-              <th class="pre">PREV</th>
-              <td><a href="#">이전 글이 없습니다.</a></td>
+              <th class="next">NEXT</th>
+              <td>
+                <a href="#" th:if="${boardNext} != null" th:href="|@{/board/detail( id=${boardNext.getId()}, size=${size}} )}|" th:text="${boardNext.getTitle()}"></a>
+                <div href="#" th:if="${boardNext} == null" th:text="#{board.nextNull}"></div>
+              </td>
             </tr>
 
             <tr>
-              <th class="next">NEXT</th>
-              <td>98번째 게시글</td>
+              <th class="pre">PREV</th>
+              <td>
+                <a href="#" th:if="${boardPrev} != null" th:href="|@{/board/detail( id=${boardPrev.getId()}, size=${size})}|" th:text="${boardPrev.getTitle()}"></a>
+                <div href="#" th:if="${boardPrev} == null" th:text="#{board.prevNull}"></div>
+              </td>
             </tr>
             </tbody>
           </table>
@@ -79,7 +83,7 @@
         <div class="btnArea btline">
           <div class="bRight">
             <ul>
-              <li><a href="#" class="sbtnMini mw">목록</a></li>
+              <li><a href="#" th:href="|@{/board/list( page=${page}, size=${size}, sort='id,desc' )}|" class="sbtnMini mw">목록</a></li>
             </ul>
           </div>
         </div>

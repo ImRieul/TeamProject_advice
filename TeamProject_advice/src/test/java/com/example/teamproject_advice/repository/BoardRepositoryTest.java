@@ -11,6 +11,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class BoardRepositoryTest extends TeamProjectAdviceApplicationTests {
@@ -80,5 +83,23 @@ public class BoardRepositoryTest extends TeamProjectAdviceApplicationTests {
         for (Board board : list) {
             boardRepository.delete(board);
         }
+    }
+
+    @Test
+    public void pageTest() {
+        // 페이지 유무 확인
+//        Page<Board> pageBoardList = boardRepository.findAll(PageRequest.of(0, 10, Sort.Direction.DESC, "id"));
+//        System.out.println(pageBoardList);
+//        System.out.println(pageBoardList.isEmpty());
+
+        // 총 페이지 개수 확인
+        int test = boardRepository.findAll(PageRequest.of(0, 10, Sort.Direction.DESC, "id")).getTotalPages();
+        System.out.println(test);
+    }
+
+    @Test
+    public void searchTest() {
+        List<Board> boardPage = boardRepository.findByTitleContaining("10");
+        System.out.println(boardPage.size());
     }
 }
