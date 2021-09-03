@@ -5,17 +5,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Data
-@ToString
+@ToString(exclude = {"user", "board"})
 public class BoardComment {
 
     @Id         // primary key
@@ -31,7 +28,8 @@ public class BoardComment {
 
     private LocalDateTime unregisteredAt;
 
-
-    private Long boardId;
-    private Long userId;
+    @ManyToOne
+    private Board board;
+    @ManyToOne
+    private User user;
 }

@@ -5,12 +5,13 @@ import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Data
-@ToString(exclude = {"user"})
+@ToString(exclude = {"user","boardCommentList"})
 @Builder
 @Accessors(chain = true)
 public class Board {
@@ -31,4 +32,8 @@ public class Board {
 
     @ManyToOne      // N : 1
     private User user;
+
+    // board : BoardComment > 1 : N
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "board")
+    private List<BoardComment> boardCommentList;
 }
