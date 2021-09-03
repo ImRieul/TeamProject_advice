@@ -28,11 +28,15 @@ public class BoardController {
     public String list(@RequestParam(value = "search", required = false) String search,
                        Model model, Pageable pageable) {
 
-        Page<Board> boardList = service.boardListPage(pageable);
-        model.addAttribute("list", boardList);                          // page list를 전송
-        model.addAttribute("paging", service.paging(pageable));         // 페이지 번호를 위한 list
-        model.addAttribute("page", service.checkPageable(pageable));    // 현재 페이지 정보 detail에 전달용
-        model.addAttribute("lastPageNumber", service.boardListLastPage(pageable.getPageSize()) -1);   // 마지막 페이지 확인용
+//        if ( search.isEmpty() ) {
+            Page<Board> boardList = service.boardListPage(pageable);
+            model.addAttribute("list", boardList);                          // page list를 전송
+            model.addAttribute("paging", service.paging(pageable));         // 페이지 번호를 위한 list
+            model.addAttribute("page", service.checkPageable(pageable));    // 현재 페이지 정보 detail에 전달용
+            model.addAttribute("lastPageNumber", service.boardListLastPage(pageable.getPageSize()) -1);   // 마지막 페이지 확인용
+//        }
+//        else {
+//        }
 
         model.addAttribute("search", search);
 

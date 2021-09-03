@@ -73,7 +73,7 @@
                 <a href="#" th:if="${ lastPageNumber == page.getPageNumber()-1 or page.getPageNumber()>4 }" th:href="@{/board/list(page=0, size=${page.getPageSize()}, sort='id,desc')}" class="n">
                   <img th:src="@{/img/btn/btn_pre2.gif}" src="../img/btn/btn_pre2.gif" alt="처음으로"/>
                 </a>
-                <a href="#" th:if="${ paging.size() != 0 and paging.get(0)>4 }" th:href="|@{/board/list(page=${paging.get(0)-1}, size=${page.getPageSize()}, sort='id,desc')}|" class="pre">
+                <a href="#" th:if="${ page.getPageNumber()>4 and not paging.isEmpty() }" th:href="|@{/board/list(page=${paging.get(0)-1}, size=${page.getPageSize()}, sort='id,desc')}|" class="pre">
                   <img th:src="@{/img/btn/btn_pre1.gif}" src="../img/btn/btn_pre1.gif" alt="앞페이지로"/>
                 </a>
 

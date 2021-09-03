@@ -73,7 +73,7 @@
                 <a href="#" th:if="${ lastPageNumber == page.getPageNumber()-1 or page.getPageNumber()>4 }" th:href="@{/board/list(page=0, size=${page.getPageSize()}, sort='id,desc')}" class="n">
                   <img th:src="@{/img/btn/btn_pre2.gif}" src="../img/btn/btn_pre2.gif" alt="처음으로"/>
                 </a>
-                <a href="#" th:if="${ page.getPageNumber()>4 }" th:href="|@{/board/list(page=${paging.get(0)-1}, size=${page.getPageSize()}, sort='id,desc')}|" class="pre">
+                <a href="#" th:if="${ page.getPageNumber()>4 and not paging.isEmpty() }" th:href="|@{/board/list(page=${paging.get(0)-1}, size=${page.getPageSize()}, sort='id,desc')}|" class="pre">
                   <img th:src="@{/img/btn/btn_pre1.gif}" src="../img/btn/btn_pre1.gif" alt="앞페이지로"/>
                 </a>
 
@@ -99,7 +99,11 @@
                       <option value="" />제목</option>
                     </select>
                   </li>
-                  <li><input type="text" class="searchInput" /></li>
+                  <li>
+                    <form th:action="@{/board/list()}">
+                      <input type="text" class="searchInput" th:name="*{search}">
+                    </form>
+                  </li>
                   <li class="web"><a href="#"><img th:src="@{/img/btn/btn_search.gif}" src="../images/btn/btn_search.gif" alt="검색" /></a></li>
                   <li class="mobile"><a href="#"><img th:src="@{/img/btn/btn_search_m.gif}" src="../img/btn/btn_search_m.gif" alt="검색" /></a></li>
                 </ul>
