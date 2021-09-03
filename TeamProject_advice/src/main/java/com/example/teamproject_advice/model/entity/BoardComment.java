@@ -18,9 +18,10 @@ import java.time.LocalDateTime;
 @ToString
 public class BoardComment {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id         // primary key
+    @GeneratedValue(strategy = GenerationType.IDENTITY)     // auto_increment
     private Long id;
+
     private String comment;
 
     private LocalDateTime createdAt;
@@ -28,8 +29,9 @@ public class BoardComment {
     private LocalDateTime updatedAt;
     private String updatedBy;
 
+    private LocalDateTime unregisteredAt;
+
+
     private Long boardId;
     private Long userId;
-
-    private LocalDateTime unregisteredAt;
 }
