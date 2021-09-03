@@ -1,9 +1,7 @@
 package com.example.teamproject_advice.model.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
+import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -13,6 +11,8 @@ import java.time.LocalDateTime;
 @Data
 @Entity
 @ToString
+@Builder
+@Accessors(chain = true)
 public class UserPhoto {
 
     @Id

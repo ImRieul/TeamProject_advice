@@ -9,4 +9,5 @@ import java.util.List;
 public interface BoardServiceInterface {
     Page<Board> boardList(Pageable pageable);
     Board findById(Long id);
+    List<Integer> paging(int i);
 }

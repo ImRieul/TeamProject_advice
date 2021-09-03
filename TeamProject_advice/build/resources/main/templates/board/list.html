@@ -70,13 +70,19 @@
               <!-- 페이징이동1 -->
               <div class="allPageMoving1">
 
-                <a href="#" class="n"><img src="../img/btn/btn_pre2.gif" alt="처음으로"/></a><a href="#" class="pre"><img src="../images/btn/btn_pre1.gif" alt="앞페이지로"/></a>
-                <strong>1</strong>
-                <a href="#" th:href="@{/board/list(page=2, size=10, sort='id,desc')}">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <a href="#">5</a>
-                <a href="#" class="next"><img src="../img/btn/btn_next1.gif" alt="뒤페이지로"/></a><a href="#" class="n"><img src="../images/btn/btn_next2.gif" alt="마지막페이지로"/></a>
+                <a href="#" class="n"><img src="../img/btn/btn_pre2.gif" alt="처음으로"/></a>
+                <a href="#" th:href="|@{/board/list(page=${page.get(0)-1}, size=10, sort='id,desc')}|" class="pre"><img src="../images/btn/btn_pre1.gif" alt="앞페이지로"/></a>
+
+                <a href="#" th:href="|@{/board/list(page=${page.get(0)}, size=10, sort='id,desc')}|" th:text="${page.get(0)+1}"></a>
+                <a href="#" th:href="|@{/board/list(page=${page.get(1)}, size=10, sort='id,desc')}|" th:text="${page.get(1)+1}"></a>
+                <a href="#" th:href="|@{/board/list(page=${page.get(2)}, size=10, sort='id,desc')}|" th:text="${page.get(2)+1}"></a>
+                <a href="#" th:href="|@{/board/list(page=${page.get(3)}, size=10, sort='id,desc')}|" th:text="${page.get(3)+1}"></a>
+                <a href="#" th:href="|@{/board/list(page=${page.get(4)}, size=10, sort='id,desc')}|" th:text="${page.get(4)+1}"></a>
+<!--                <a href="#">3</a>-->
+<!--                <a href="#">4</a>-->
+<!--                <a href="#">5</a>-->
+                <a href="#" th:href="|@{/board/list(page=${page.get(4)+1}, size=10, sort='id,desc')}|" class="next"><img src="../img/btn/btn_next1.gif" alt="뒤페이지로"/></a>
+                <a href="#" class="n"><img src="../images/btn/btn_next2.gif" alt="마지막페이지로"/></a>
 
               </div>
               <!-- //페이징이동1 -->

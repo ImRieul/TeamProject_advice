@@ -1,12 +1,14 @@
 package com.example.teamproject_advice.repository;
 
 import com.example.teamproject_advice.TeamProjectAdviceApplicationTests;
+import com.example.teamproject_advice.model.entity.Board;
 import com.example.teamproject_advice.model.entity.Item;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 public class ItemRepositoryTest extends TeamProjectAdviceApplicationTests {
 
@@ -15,26 +17,23 @@ public class ItemRepositoryTest extends TeamProjectAdviceApplicationTests {
 
     @Test //생성
     public void create() {
-        Item item1 = new Item();
+        for (int i=1; i<100; i++) {
+            Item item = Item.builder()
+                    .status("test")
+                    .name("testUser" + i)
+                    .title(i + "번째 게시글")
+                    .content(i + "번 즐겁다")
+                    .price(10000)
+                    .brandName("Kim")
+                    .registeredAt(LocalDateTime.now())
+                    .createdAt(LocalDateTime.now())
+                    .createdBy("adminTest")
+                    .partnerId(1L)
+                    .build();
 
-        item1.setId(1L);
-        item1.setStatus("ready");
-        item1.setName("abcJean");
-        item1.setTitle("Pants");
-        item1.setContent("sangsesulmyeng");
-        item1.setPrice(10000);
-        item1.setBrandName("brand010101");
-
-        item1.setRegisteredAt(LocalDateTime.now());
-
-        item1.setCreatedAt(LocalDateTime.now());
-        item1.setCreatedBy("admin01");
-
-        item1.setPartnerId(1L);
-
-
-        Item newItem = itemRepository.save(item1);
-        System.out.println(newItem);
+            itemRepository.save(item);
+            System.out.println("생성 완료 : " + item.getName());
+        }
     }
 
 //    @Test //읽기
@@ -71,12 +70,13 @@ public class ItemRepositoryTest extends TeamProjectAdviceApplicationTests {
 //
 //    }
 //
-//    @Test //삭제
-//    public void delete() {
-//        Optional<User> user = userRepository.findById(2L);
-//
-//        user.ifPresent(u -> {
-//            userRepository.delete(u);
-//        });
-//    }
+    @Test //삭제
+    public void delete() {
+        List<Item> item = itemRepository.findAll();
+
+        item.stream().forEach(u -> {
+            System.out.println(u.getId() + " 삭제 완료");
+            itemRepository.delete(u);
+        });
+    }
 }

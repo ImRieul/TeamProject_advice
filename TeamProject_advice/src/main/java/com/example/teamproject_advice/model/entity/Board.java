@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Entity
 @Data
-@ToString
+@ToString(exclude = {"user"})
 @Builder
 @Accessors(chain = true)
 public class Board {

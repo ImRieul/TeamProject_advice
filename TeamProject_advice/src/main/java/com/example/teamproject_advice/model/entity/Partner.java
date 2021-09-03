@@ -1,8 +1,10 @@
 package com.example.teamproject_advice.model.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,6 +16,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Data
 @Entity
+@Builder
+@Accessors(chain = true)
 public class Partner {
 
     @Id
