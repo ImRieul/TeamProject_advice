@@ -100,8 +100,11 @@
                     </select>
                   </li>
                   <li>
-                    <form th:action="@{/board/list()}">
-                      <input type="text" class="searchInput" th:name="*{search}">
+                    <form th:action="@{ /board/list }">
+                      <input type="text" class="searchInput" th:name="search">
+                      <input type="hidden" th:name="page" th:value="${page.getPageNumber()}">
+                      <input type="hidden" th:name="size" th:value="${page.getPageSize()}">
+<!--                      <input type="hidden" th:name="sort" th:value="${page.getSort()}">-->
                     </form>
                   </li>
                   <li class="web"><a href="#"><img th:src="@{/img/btn/btn_search.gif}" src="../images/btn/btn_search.gif" alt="검색" /></a></li>
