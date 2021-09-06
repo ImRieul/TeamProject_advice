@@ -6,6 +6,8 @@ import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
+// Service interface : 오타 방지, (메서드 요약집)
+
 public interface BoardServiceInterface {
     Page<Board> boardListPage(Pageable pageable);
     int boardListLastPage(int size);

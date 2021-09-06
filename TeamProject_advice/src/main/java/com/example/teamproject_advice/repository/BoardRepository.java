@@ -8,6 +8,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+// 역할 : DB를 정의된 class의 규격으로 읽음
+// JpaRepository<이름, PK 타입>
 @Repository
 public interface BoardRepository extends JpaRepository<Board, Long> {
 
