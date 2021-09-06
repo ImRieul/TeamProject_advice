@@ -6,6 +6,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+
+// JPA Repository를 상속받아서 User Entity(class)와 연결 <이름, Id 타입>
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 }
