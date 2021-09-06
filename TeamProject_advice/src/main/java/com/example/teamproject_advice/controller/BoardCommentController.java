@@ -24,61 +24,61 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-
-@RequiredArgsConstructor
-@Controller
-@RestController
-@RequestMapping("/comment")
-public class BoardCommentController {
-
-    @NonNull
-    UserRepository userRepository;
-    @NonNull
-    BoardCommentService boardCommentService;
-
-    //생성
-    @PostMapping("/add/comment")
-    public ResponseEntity<List<BoardComment>> addComment(@PathVariable Long board,
-                                                         @RequestBody BoardCommentRequest commentrequest, Principal principal) {
-        commentrequest.setBoard(board);
-        commentrequest.setCreated_by(principal.getName());
-        Optional<User> findNo= userRepository.findById(Long.valueOf(principal.getName()));
-        findNo.ifPresent(finduserNo -> {
-            commentrequest.setUser(finduserNo.getId());
-            BoardComment comm = this.boardCommentService
-                    .createComment(MapperUtil.convert(commentrequest, BoardComment.class)
-                    ,finduserNo,commentrequest.getBoard());
-        });
-
-        return new ResponseEntity<>(this.boardCommentService
-                .ListBoardComment(board), HttpStatus.CREATED);
-    }
-
-    // 읽기
-    @GetMapping("/read/comment")
-    public ResponseEntity<List<BoardComment>> addComment(@PathVariable Long board){
-        return new ResponseEntity<>(this.boardCommentService
-                .ListBoardComment(board),HttpStatus.CREATED);
-    }
-
-    // 삭제
-    @DeleteMapping("/delete/comment")
-    public ResponseEntity<List<BoardComment>> addComment(@PathVariable Long board,@PathVariable Long commentNo) {
-        return new ResponseEntity<>(this.boardCommentService
-                .DeleteBoardComment(commentNo,board),HttpStatus.CREATED);
-    }
-
-    // 수정
-    @PutMapping("/modify/comment")
-    public ResponseEntity<List<BoardComment>> modifyComment(@PathVariable Long board, @PathVariable Long commentNo,
-                                                            @RequestBody BoardCommentRequest boardCommentRequest, Principal principal) {
-        boardCommentRequest.setCreated_by(principal.getName());
-
-        return new ResponseEntity<>(this.boardCommentService
-                .ModifyComments(MapperUtil.convert(boardCommentRequest, BoardComment.class),commentNo,board),HttpStatus.CREATED);
-    }
-
-}
+//
+//@RequiredArgsConstructor
+//@Controller
+//@RestController
+//@RequestMapping("/comment")
+//public class BoardCommentController {
+//
+//    @NonNull
+//    UserRepository userRepository;
+//    @NonNull
+//    BoardCommentService boardCommentService;
+//
+//    //생성
+//    @PostMapping("/add/comment")
+//    public ResponseEntity<List<BoardComment>> addComment(@PathVariable Long board,
+//                                                         @RequestBody BoardCommentRequest commentrequest, Principal principal) {
+//        commentrequest.setBoard(board);
+//        commentrequest.setCreated_by(principal.getName());
+//        Optional<User> findNo= userRepository.findById(Long.valueOf(principal.getName()));
+//        findNo.ifPresent(finduserNo -> {
+//            commentrequest.setUser(finduserNo.getId());
+//            BoardComment comm = this.boardCommentService
+//                    .createComment(MapperUtil.convert(commentrequest, BoardComment.class)
+//                    ,finduserNo,commentrequest.getBoard());
+//        });
+//
+//        return new ResponseEntity<>(this.boardCommentService
+//                .ListBoardComment(board), HttpStatus.CREATED);
+//    }
+//
+//    // 읽기
+//    @GetMapping("/read/comment")
+//    public ResponseEntity<List<BoardComment>> addComment(@PathVariable Long board){
+//        return new ResponseEntity<>(this.boardCommentService
+//                .ListBoardComment(board),HttpStatus.CREATED);
+//    }
+//
+//    // 삭제
+//    @DeleteMapping("/delete/comment")
+//    public ResponseEntity<List<BoardComment>> addComment(@PathVariable Long board,@PathVariable Long commentNo) {
+//        return new ResponseEntity<>(this.boardCommentService
+//                .DeleteBoardComment(commentNo,board),HttpStatus.CREATED);
+//    }
+//
+//    // 수정
+//    @PutMapping("/modify/comment")
+//    public ResponseEntity<List<BoardComment>> modifyComment(@PathVariable Long board, @PathVariable Long commentNo,
+//                                                            @RequestBody BoardCommentRequest boardCommentRequest, Principal principal) {
+//        boardCommentRequest.setCreated_by(principal.getName());
+//
+//        return new ResponseEntity<>(this.boardCommentService
+//                .ModifyComments(MapperUtil.convert(boardCommentRequest, BoardComment.class),commentNo,board),HttpStatus.CREATED);
+//    }
+//
+//}
 
 
 

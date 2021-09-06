@@ -35,9 +35,9 @@ public class BoardController {
 
         // model(return) 에 값을 전송
         model.addAttribute("list", boardPage);                          // list(key), boardPage(value, Page type)
-        model.addAttribute("paging", service.paging(pageable));         // paging(key), 페이지 번호를 위한 list(value, List type)
+        model.addAttribute("paging", service.paging(pageable, boardPage.getTotalPages()));         // paging(key), 페이지 번호를 위한 list(value, List type)
         model.addAttribute("page", service.checkPageable(pageable));    // page(key), 현재 페이지 정보 detail에 전달용(value, Pageable type)
-        model.addAttribute("lastPageNumber", service.boardListLastPage(pageable.getPageSize()) -1);   // lastPageNumber(key), 마지막 페이지 확인용(value, int type)
+        model.addAttribute("lastPageNumber", service.boardListLastPage(pageable.getPageSize() -1, search));   // lastPageNumber(key), 마지막 페이지 확인용(value, int type)
 
         model.addAttribute("search", search);       // search(key), value String type
 

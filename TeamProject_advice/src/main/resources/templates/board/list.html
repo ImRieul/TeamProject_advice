@@ -57,7 +57,7 @@
 
                 <tr th:unless="${list.isEmpty()}" th:each="board : ${list}">
                   <td class="tnone" th:text="${board.id}"></td>
-                  <td class="left"><a href="#" th:href="|@{ /board/detail( id=${board.id}, page=${page.getPageNumber()}, size=${page.getPageSize()}, sort=${page.getSort()} ) }|" th:text="${board.title}"></a></td>
+                  <td class="left"><a href="#" th:href="|@{ /board/detail( id=${board.id}, page=${page.getPageNumber()}, size=${page.getPageSize()}, sort=${page.getSort()} )}|" th:text="${board.title}"></a></td>
                   <td class="tnone right" th:text="${#temporals.format(board.registeredAt, 'yyyy-MM-dd HH:mm')}"></td>
                   <td th:text="${board.writer}"></td>
                 </tr>
@@ -70,19 +70,19 @@
               <!-- 페이징이동1 -->
               <div class="allPageMoving1">
 
-                <a href="#" th:if="${ lastPageNumber == page.getPageNumber()-1 or page.getPageNumber()>4 }" th:href="@{/board/list(page=0, size=${page.getPageSize()}, sort='id,desc')}" class="n">
+                <a href="#" th:if="${ lastPageNumber == page.getPageNumber()-1 or page.getPageNumber()>4 }" th:href="@{/board/list(page=0, size=${page.getPageSize()}, sort='id,desc', search=${search})}" class="n">
                   <img th:src="@{/img/btn/btn_pre2.gif}" src="../img/btn/btn_pre2.gif" alt="처음으로"/>
                 </a>
-                <a href="#" th:if="${ page.getPageNumber()>4 and not paging.isEmpty() }" th:href="|@{/board/list(page=${paging.get(0)-1}, size=${page.getPageSize()}, sort='id,desc')}|" class="pre">
+                <a href="#" th:if="${ page.getPageNumber()>4 and not paging.isEmpty() }" th:href="|@{/board/list(page=${paging.get(0)-1}, size=${page.getPageSize()}, sort='id,desc', search=${search})}|" class="pre">
                   <img th:src="@{/img/btn/btn_pre1.gif}" src="../img/btn/btn_pre1.gif" alt="앞페이지로"/>
                 </a>
 
-                <a th:unless="${paging.isEmpty()}" th:each="i : ${paging}" th:href="|@{ /board/list(page=${i}, size=${page.getPageSize()}, sort='id,desc') }|" th:text="${i+1}" ></a>
+                <a th:unless="${paging.isEmpty()}" th:each="i : ${paging}" th:href="|@{ /board/list(page=${i}, size=${page.getPageSize()}, sort='id,desc', search=${search}) }|" th:text="${i+1}" ></a>
 
-                <a href="#" th:if="${ paging.size() != 0 and paging.get(paging.size()-1) != lastPageNumber }" th:href="|@{/board/list(page=${ paging.get(paging.size()-1)+1 }, size=10, sort='id,desc')}|" class="next">
+                <a href="#" th:if="${ paging.size() != 0 and paging.get(paging.size()-1) != lastPageNumber }" th:href="|@{/board/list(page=${ paging.get(paging.size()-1)+1 }, size=10, sort='id,desc', search=${search})}|" class="next">
                   <img src="../img/btn/btn_next1.gif" alt="뒤페이지로"/>
                 </a>
-                <a href="#" th:if="${ paging.size() != 0 and paging.get(paging.size()-1) != lastPageNumber }" th:href="|@{/board/list(page=${lastPageNumber}, size=10, sort='id,desc')}|" class="n">
+                <a href="#" th:if="${ paging.size() != 0 and paging.get(paging.size()-1) != lastPageNumber }" th:href="|@{/board/list(page=${lastPageNumber}, size=10, sort='id,desc', search=${search})}|" class="n">
                   <img th:src="@{/img/btn/btn_next2.gif}" src="../img/btn/btn_next2.gif" alt="마지막페이지로"/>
                 </a>
 
