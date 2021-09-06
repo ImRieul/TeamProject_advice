@@ -31,12 +31,12 @@ public class BoardController {
                        Model model, Pageable pageable) {
 
         //         검색한 내용이 없을 때 (search param이 없을 때)
-        Page<Board> boardPage = ( search.isEmpty() )? service.boardListPage(pageable) : service.searchBoardPage(search, pageable);
+        Page<Board> boardPage = ( search == null || search.isEmpty() )? service.boardListPage(pageable) : service.searchBoardPage(search, service.checkPageable(pageable));
 
         // model(return) 에 값을 전송
         model.addAttribute("list", boardPage);                          // list(key), boardPage(value, Page type)
         model.addAttribute("paging", service.paging(pageable));         // paging(key), 페이지 번호를 위한 list(value, List type)
-        model.addAttribute("page", service.checkPageable(pageable));    // page(key), 현재 페이지 정보 detail에 전달용(value, int type)
+        model.addAttribute("page", service.checkPageable(pageable));    // page(key), 현재 페이지 정보 detail에 전달용(value, Pageable type)
         model.addAttribute("lastPageNumber", service.boardListLastPage(pageable.getPageSize()) -1);   // lastPageNumber(key), 마지막 페이지 확인용(value, int type)
 
         model.addAttribute("search", search);       // search(key), value String type
