@@ -13,4 +13,5 @@ public interface BoardServiceInterface {
     Board findById(Long id);
     List<Integer> paging(Pageable pageable);
     int returnPageNumber(Long id, int size);
+    Page<Board> searchBoardPage(String search, Pageable pageable);
 }

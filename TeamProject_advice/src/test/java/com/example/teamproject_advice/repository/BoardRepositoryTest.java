@@ -99,7 +99,15 @@ public class BoardRepositoryTest extends TeamProjectAdviceApplicationTests {
 
     @Test
     public void searchTest() {
-        List<Board> boardPage = boardRepository.findByTitleContaining("10");
-        System.out.println(boardPage.size());
+        Pageable pageable = PageRequest.of(0, 10, Sort.Direction.DESC, "id");
+        Page<Board> boardPage = boardRepository.findByTitleContaining("번째", pageable);
+        System.out.println(boardPage.getTotalPages());
+    }
+
+    @Test
+    public void offsetTest() {
+        Pageable pageable = PageRequest.of(0, 10, Sort.Direction.DESC, "id");
+        System.out.println(pageable.getOffset());
+
     }
 }

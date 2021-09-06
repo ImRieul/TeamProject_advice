@@ -78,5 +78,8 @@ public class BoardService implements BoardServiceInterface {
         return Math.toIntExact(descFindAll.indexOf(id) / size);
     }
 
-
+    @Override
+    public Page<Board> searchBoardPage(String search, Pageable pageable) {
+        return boardRepository.findByTitleContaining(search, pageable);
+    }
 }
