@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="54e72b47-d2bf-4dc5-bc50-08c67beddacb" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/css/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TeamProject_advice/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TeamProject_advice/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TeamProject_advice/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TeamProject_advice/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/z.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/community.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/z2.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/z3.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/shop.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/z4.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/signUp.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/z5.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first.html" beforeDir="false" afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fourth.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/z.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/logo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/zz.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/background.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/second.html" beforeDir="false" afterPath="$PROJECT_DIR$/signUp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/third.html" beforeDir="false" afterPath="$PROJECT_DIR$/community.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1xNUTxcU1E5mXBxEe4YFjQAxgIj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../html&amp;css/chapter10/sample-site2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\LG\Desktop\TeamProject_advice\TeamProject_advice\htmlll\css" />
+      <recent name="C:\Users\LG\Desktop\TeamProject_advice\TeamProject_advice\htmlll" />
+      <recent name="C:\Users\LG\Desktop\htmlll\css" />
+      <recent name="C:\Users\LG\Desktop\htmlll\image" />
+      <recent name="C:\Users\LG\Desktop\htmlll\js" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\LG\Desktop\TeamProject_advice\TeamProject_advice\htmlll" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="home.html" type="JavascriptDebugType" temporary="true" uri="http://localhost:63342/htmlll/z.html?_ij_reload" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript 디버그.home.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="디폴트 작업">
+      <changelist id="54e72b47-d2bf-4dc5-bc50-08c67beddacb" name="변경" comment="" />
+      <created>1630195050698</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1630195050698</updated>
+      <workItem from="1630195051959" duration="5669000" />
+      <workItem from="1630200811211" duration="4760000" />
+      <workItem from="1630231572847" duration="4316000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
