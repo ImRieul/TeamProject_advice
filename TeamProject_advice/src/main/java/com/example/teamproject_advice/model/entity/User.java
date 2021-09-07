@@ -1,23 +1,13 @@
 package com.example.teamproject_advice.model.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
+import lombok.experimental.Accessors;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
-<<<<<<< Updated upstream
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
-@Entity
-@ToString
-=======
 @AllArgsConstructor // 모든 변수를 포함하는 생성자
 @NoArgsConstructor  // 변수를 가지고 있지 않은 기본 생성자
 @Data               // getter, setter
@@ -26,7 +16,6 @@ import java.time.LocalDateTime;
 @ToString(exclude = {"boardList", "commentList"})      // exclude : 제외됨, ToString을 제외할 것들
 @Builder            // 클래스를 생성할 때 변수의 값을 쌓아서 넣을 수 있음
 @Accessors(chain = true)        // setter 메서드를 쌓아서 사용 가능
->>>>>>> Stashed changes
 public class User {
 
     @Id
@@ -44,8 +33,6 @@ public class User {
     private LocalDateTime updatedAt;
     private String updatedBy;
 
-<<<<<<< Updated upstream
-=======
 //    private Long userPhotoId;
 
     // 1 : N
@@ -55,5 +42,4 @@ public class User {
     // 1 : N
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
     private List<Comment> commentList;
->>>>>>> Stashed changes
 }

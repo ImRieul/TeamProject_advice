@@ -18,16 +18,6 @@ public class UserRepositoryTest extends TeamProjectAdviceApplicationTests {
     public void create() {
         User user1 = new User();
 
-<<<<<<< Updated upstream
-        user1.setAccount("ju02");
-        user1.setPassword("1234");
-        user1.setStatus("ready");
-        user1.setPhoneNumber("010-1111-1111");
-        user1.setRegisteredAt(LocalDateTime.now());
-
-        user1.setCreatedAt(LocalDateTime.now());
-        user1.setCreatedBy("admin1");
-=======
         user1.setAccount("abc123");
         user1.setPassword("1234");
         user1.setStatus("ready");
@@ -37,14 +27,12 @@ public class UserRepositoryTest extends TeamProjectAdviceApplicationTests {
 
         user1.setCreatedAt(LocalDateTime.now());
         user1.setCreatedBy("Admin3");
->>>>>>> Stashed changes
 
         User newUser = userRepository.save(user1);
         System.out.println(newUser);
     }
-}
 
-<<<<<<< Updated upstream
+
     @Test //읽기
     public void read() {
 
@@ -84,52 +72,3 @@ public class UserRepositoryTest extends TeamProjectAdviceApplicationTests {
         });
     }
 }
-=======
-//    @Test
-//    @Transactional
-//    public void read() {
-//
-////        List<User> userList = userRepository.findAll();
-////
-////        for (User user : userList) {
-////            user.toString();
-////        }
-//
-//        Optional<User> user = userRepository.findById(1L);
-//
-//        user.ifPresent(user1 -> {
-//            System.out.println("user account : " + user1.getAccount());
-//            System.out.println("user board : " + user1.getBoardList().size());
-//        });
-//
-//    }
-//
-//    @Test
-//    public void update() {
-//        Optional<User> user = userRepository.findById(5L);
-//
-//        user.ifPresent(u -> {
-//            u.setAccount("juyoung");
-//            u.setPassword("skdkskdk");
-//            u.setUpdatedAt(LocalDateTime.now());
-//            u.setUpdatedBy("admin");
-//
-//            userRepository.save(u);
-//
-//        });
-//
-//
-//
-//    }
-//
-//    @Test
-//    public void delete() {
-//        Optional<User> user = userRepository.findById(6L);
-//
-//        user.ifPresent(u -> {
-//            userRepository.delete(u);
-//        });
-//    }
-//
-//}
->>>>>>> Stashed changes
