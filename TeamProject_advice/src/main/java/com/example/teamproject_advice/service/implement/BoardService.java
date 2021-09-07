@@ -47,6 +47,29 @@ public class BoardService implements BoardServiceInterface {
         return boardRepository.findAll(setPageable);
     }
 
+    @Override
+    public Page<Board> searchBoardPage(String search, Pageable pageable) {
+        return boardRepository.findByTitleContaining(search, pageable);
+    }
+
+
+    // ========== 게시글 삭제 ==========
+
+    @Override
+    public String BoardDelete(Long id) {
+        try {
+            Board board = findById(id);
+            boardRepository.delete(board);
+            if ( board == null ) { return "fail"; }
+            return "success";
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            return "error";
+        }
+    }
+
+
     // url에 pageable이 입력되어 있는지 확인하는 메서드.
     @Override
     public Pageable checkPageable(Pageable pageable) {
@@ -60,7 +83,6 @@ public class BoardService implements BoardServiceInterface {
         Pageable pageable = PageRequest.of(0, size, Sort.Direction.DESC, "id");
         Page<Board> page = (search == null)? boardRepository.findAll(pageable) : boardRepository.findByTitleContaining(search, pageable);
         int lastPage = page.getTotalPages();
-        System.out.println("마지막 페이지 : " + lastPage);
         return lastPage -1;
     }
 
@@ -74,14 +96,11 @@ public class BoardService implements BoardServiceInterface {
     @Override
     public List<Integer> paging(Pageable pageable, int totalPage) {
         int page = pageable.getPageNumber();
-//        int multiplication = (totalPage<)
-
-                //  8 >> 6, 7, 8, 9, 10 >> 6, 7, 8, 9
 
         int d = (0<page)? page/5 : 0;       // 시작 번호 지정 (최대 5개)
 
         int startInt = d*5;
-        int endInt = ( (d*5 +4) > totalPage -1)? totalPage -1 : d*5 +4;
+        int endInt = ( (d*5 +4) > totalPage -1)? totalPage -1 : d*5 +4;     // 계산식이 마지막 페이지보다 크면
 
         List<Integer> list = new ArrayList<>();
 
@@ -105,8 +124,8 @@ public class BoardService implements BoardServiceInterface {
         return Math.toIntExact(descFindAll.indexOf(id) / size);
     }
 
-    @Override
-    public Page<Board> searchBoardPage(String search, Pageable pageable) {
-        return boardRepository.findByTitleContaining(search, pageable);
-    }
+
+
+
+
 }

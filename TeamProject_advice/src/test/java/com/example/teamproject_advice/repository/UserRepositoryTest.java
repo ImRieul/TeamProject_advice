@@ -20,8 +20,8 @@ public class UserRepositoryTest extends TeamProjectAdviceApplicationTests {
 //        insert info user values(id, account);
         User user1 = new User();
 
-        user1.setAccount("ju02");
-        user1.setPassword("dksk");
+        user1.setAccount("ju03");
+        user1.setPassword("dksking");
         user1.setStatus("ready");
 
         user1.setPhoneNumber("010-0000-0000");

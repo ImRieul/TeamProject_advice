@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/layout/main_layout}">
+
+<head>
+  <title>board</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="../../static/css/board/reset.css" th:href="@{/css/board/reset.css}">
+  <link rel="stylesheet" href="../../static/css/board/list.css" th:href="@{/css/board/detail.css}">
+
+</head>
+<body>
+<div id="contents">
+  <div id="mypage">
+    <div class="checkDivTab">
+      <table summary="분류, 구매여부, 평가, 제목, 상세 내용 순으로 상품평을 작성 하실수 있습니다." class="checkTable" border="1"
+           cellspacing="0">
+        <colgroup>
+          <col width="19%" class="tw30" />
+          <col width="*" />
+        </colgroup>
+
+        <tbody>
+          <tr>
+            <th scope="row"><span>제목</span></th>
+            <td>
+              <input type="text" class="wlong" />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><span>상세 내용</span></th>
+            <td>
+              <textarea class="tta"></textarea>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="btnArea">
+      <div class="bCenter">
+        <ul>
+          <li><a href="#" class="nbtnbig">취소</a></li>
+          <li><a href="#" class="sbtnMini">확인</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- //Btn Area -->
+
+  </div>
+</div>
+<!-- //contents -->
+</body>
+</html>

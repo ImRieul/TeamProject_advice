@@ -10,9 +10,11 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,7 +32,7 @@ public class BoardController {
     public String list(@RequestParam(value = "search", required = false) String search,
                        Model model, Pageable pageable) {
 
-        //         검색한 내용이 없을 때 (search param이 없을 때)
+        // 검색한 내용이 없을 때 (search param이 없을 때)
         Page<Board> boardPage = ( search == null || search.isEmpty() )? service.boardListPage(pageable) : service.searchBoardPage(search, service.checkPageable(pageable));
 
         // model(return) 에 값을 전송
@@ -55,6 +57,8 @@ public class BoardController {
         model.addAttribute("board", board);     // board(key), board(value, Board type)
 
         // model(return) 에 값을 전송
+
+        model.addAttribute("dateFotmat", DateTimeFormatter.ofPattern("yyyy MM dd"));
         model.addAttribute("boardNext", service.findById(id+1));        // boardNext(key), 다음 글(value, board type)
         model.addAttribute("boardPrev", service.findById(id-1));        // boardPrev(key), 이전 글(value, board type)
 
@@ -73,4 +77,23 @@ public class BoardController {
 
         return "board/detail";
     }
+
+
+    @PostMapping("/detail/delete.do")
+    public String boardDelete(@RequestParam(value = "id", required = false) Long id) {
+        switch ( service.BoardDelete(id) ) {
+            case "success":
+                System.out.println("delete.do : " + id + "번 게시글 삭제 성공");
+                break;
+            case "fail":
+                System.out.println("delete.do : " + id + "번 게시글이 없습니다");
+            case "error":
+                System.out.println("delete.do : " + id + "번 게시글 삭제 중 에러");
+                break;
+            default:
+                System.out.println(service.BoardDelete(id));
+        }
+        return "redirect:/board/list";
+    }
+
 }
