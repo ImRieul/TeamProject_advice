@@ -23,9 +23,6 @@ public class BoardRepositoryTest extends TeamProjectAdviceApplicationTests {
     @Autowired
     private UserRepository userRepository;
 
-
-    protected PageRequest pageRequest;
-
     @Test
     public void create() {
         for (int i=1; i<100; i++) {
