@@ -17,7 +17,7 @@ import java.util.List;
 @Data               // getter, setter
 @Entity             // Entity : 독립체, jpa가 관리하는 클래스, 데이터베이스의 column과 연결시켜줌
 @EntityListeners(AuditingEntityListener.class)
-@ToString(exclude = {"boardList"})      // exclude : 제외됨, ToString을 제외할 것들
+@ToString(exclude = {"boardList", "boardCommentList"})      // exclude : 제외됨, ToString을 제외할 것들
 @Builder            // 클래스를 생성할 때 변수의 값을 쌓아서 넣을 수 있음
 @Accessors(chain = true)        // setter 메서드를 쌓아서 사용 가능
 public class User {
@@ -47,7 +47,7 @@ public class User {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
     private List<Board> boardList;
 
-//    // 1 : N
-//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-//    private List<Comment> commentList;
+    // 1 : N
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    private List<BoardComment> boardCommentList;
 }

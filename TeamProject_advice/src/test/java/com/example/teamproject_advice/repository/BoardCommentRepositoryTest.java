@@ -2,7 +2,7 @@ package com.example.teamproject_advice.repository;
 
 import com.example.teamproject_advice.TeamProjectAdviceApplicationTests;
 import com.example.teamproject_advice.model.entity.Board;
-import com.example.teamproject_advice.model.entity.Comment;
+import com.example.teamproject_advice.model.entity.BoardComment;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -10,10 +10,10 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
-public class CommentRepositoryTest extends TeamProjectAdviceApplicationTests {
+public class BoardCommentRepositoryTest extends TeamProjectAdviceApplicationTests {
 
     @Autowired
-    private CommentRepository commentRepository;
+    private BoardCommentRepository boardCommentRepository;
     @Autowired
     private BoardRepository boardRepository;
     @Autowired
@@ -23,7 +23,7 @@ public class CommentRepositoryTest extends TeamProjectAdviceApplicationTests {
     public void create() {
         List<Board> boardList = boardRepository.findAll();
 
-        Comment comm1 = Comment.builder()
+        BoardComment comm1 = BoardComment.builder()
                 .user(userRepository.findAll().get(0))
                 .board(boardList.get(boardList.size()-1))
                 .comment("안할래")
@@ -32,13 +32,13 @@ public class CommentRepositoryTest extends TeamProjectAdviceApplicationTests {
                 .build();
 
 
-        Comment newComment = commentRepository.save(comm1);
-        System.out.println(newComment);
+        BoardComment newBoardComment = boardCommentRepository.save(comm1);
+        System.out.println(newBoardComment);
     }
 
     @Test
     public void read() {
-        Optional<Comment> boardComment = commentRepository.findById(2L);
+        Optional<BoardComment> boardComment = boardCommentRepository.findById(2L);
 
         boardComment.ifPresent(bc -> {
             System.out.println("댓글을 쓴 게시글 : "+bc.getBoard().getTitle());
