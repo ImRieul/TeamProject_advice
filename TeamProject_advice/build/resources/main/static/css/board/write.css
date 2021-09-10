@@ -1,8 +1,8 @@
 /* contents */
 #contents{display: flex; justify-content: center; width:670px;}
-#contents h2{height:86px; text-align:center; border-bottom:1px #5b524d solid;}
-#contents h2 strong{width:100%; display:block; font-size:40px; font-weight:600; color:#444; margin:0 0 10px 0;}
-#contents h2 span{width:100%; display:block; font-size:14px; color:#888; font-weight:normal; line-height:1.2; word-break:keep-all;}
+/*#contents h2{height:86px; text-align:center; border-bottom:1px #5b524d solid;}*/
+/*#contents h2 strong{width:100%; display:block; font-size:40px; font-weight:600; color:#444; margin:0 0 10px 0;}*/
+/*#contents h2 span{width:100%; display:block; font-size:14px; color:#888; font-weight:normal; line-height:1.2; word-break:keep-all;}*/
 
 /* checkTable */
 .checkDivTab{width:100%; margin:20px 0 0 0; border-top:1px #5b524d solid; overflow:hidden;}
@@ -14,6 +14,13 @@
 .checkTable td{color:#888; padding:8px 0 8px 20px; vertical-align:middle; text-align:left; font-size:13px; line-height:1.3; border-bottom:1px #d9d9d9 solid;}
 .checkTable td label{font-size:13px; color:#666; padding:2px 35px 0 2px;}
 .checkTable td strong{color:#666;}
+
+/* input type */
+.wlong{width:95%; height:18px; line-height:18px; background:#fff; border:1px #d9d9d9 solid; padding:0 5px; font-size:12px;}
+
+/* textArea */
+.tta{width:95%; height:288px; font-size:12px; border:1px #d9d9d9 solid; font-family:'Nanum Gothic';}
+.checkTable th .comment{height: 300px}
 
 /********* MY PAGE *********/
 #mypage{width:100%; overflow:hidden;}
@@ -65,9 +72,12 @@
 /* button */
 .btnArea{position:relative; width:100%; height:30px; padding:20px 0 0 0;text-align:center; clear:both;}
 .bCenter{width:250px; margin:0 auto;}
+.bCenter li{float:left; padding:0 5px;}
 
 .nbtnbig{display:block; width:110px; height:30px; line-height:30px; background:#999; color:#fff !important; font-size:14px; font-weight:600; text-align:center;}
 .nbtnbig:hover{color:#fff;}
 
 .sbtnMini{display:block; width:110px; height:30px; line-height:30px; background:#f7703c; color:#fff !important; font-size:14px; font-weight:600; text-align:center;}
 .sbtnMini:hover{color:#fff;}
+
+

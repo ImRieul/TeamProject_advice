@@ -4,9 +4,7 @@ import com.example.teamproject_advice.model.entity.Board;
 import com.example.teamproject_advice.service.implement.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @RequiredArgsConstructor
@@ -76,6 +73,30 @@ public class BoardController {
         model.addAttribute("comment", testMap);     // comment(key), testMap(value, May<String, String> type)
 
         return "board/detail";
+    }
+
+
+    @PostMapping("/beforeWrite")
+    public String beforeWrite(@RequestParam(value = "boardId", required = false) Long id,
+                              Model model) {
+        System.out.println("berforeWrite : " + id);
+        model.addAttribute("boardId");
+        return "/board/write";
+    }
+
+    @PostMapping("/write.do")
+    public String write(@RequestParam(value = "boardId", required = false) Long id,
+                        @RequestParam(value = "title") String title,
+                        @RequestParam(value = "comment") String comment,
+                        Model model) {
+        System.out.println("write : " + id);
+        System.out.println("write : " + title);
+        System.out.println("write : " + comment);
+
+
+//        String returnView = "/board/detail(id=" + id + ")";
+        String returnView = "/board/list";
+        return "redirect:/board/list";
     }
 
 

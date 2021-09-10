@@ -14,24 +14,42 @@
   <th:block layout:fragment="script">
     <script th:inline="javascript">
         /* <![CDATA[ */
-          function boardDelete(id) {
-              if ( confirm( id + "번 게시글을 삭제할까요?") ) {
-                  let uri = /*[[ @{/board/detail/delete.do} ]]*/;   // /* 내용 */ 이렇게 띄우면 에러남 /*내용*/ 이렇게 사용할 것
-                  let html = "";
+        function url() {
+            // /* 내용 */ 이렇게 띄우면 에러남 /*내용*/ 이렇게 사용할 것
+            return /*[[ @{/board/detail/} ]]*/;
+        }
+        function boardWrite() {
+            let uri = /*[[ @{/board/beforeWrite} ]]*/;
+            let id = /*[[ ${board.getId()} ]]*/;
+            let html = "";
 
-                  html += '<form name=dataForm action="' + uri + '" method="post">' +
-                              '<input type="hidden" name="id" value="' + id + '"/>' +
-                          '</form>';
-                  $("body").append(html);
-                  document.dataForm.submit();
+            html += '<form name="idForm" action="' + uri + '" method="post">';
+            html +=   '<input type="hidden" name="boardId" value="' + id + '"/>';
+            html += '</form>';
 
-                  alert("게시글을 삭제하였습니다");
-              }
-          }
+            $("body").append(html);
+            document.idForm.submit();
+        }
+
+        function boardDelete(id) {
+            if ( confirm( "게시글을 삭제할까요?" ) ) {
+                let uri = url() + "delete.do";
+                let html = "";
+
+                html += '<form name=dataForm action="' + uri + '" method="post">' +
+                            '<input type="hidden" name="id" value="' + id + '"/>' +
+                        '</form>';
+                $("body").append(html);
+                document.dataForm.submit();
+
+                alert("게시글을 삭제하였습니다");
+            }
+        }
       /* ]]> */
 
     </script>
   </th:block>
+
 </head>
 
 <body>
@@ -108,7 +126,7 @@
         <div class="btnArea btline">
           <div class="bRight">
             <ul>
-              <li><a href="#" th:href="|@{/board/list( page=${page}, size=${size}, sort='id,desc' )}|" class="sbtnMini mw">수정</a></li>
+              <li><a href="#" th:onclick="boardWrite()" class="sbtnMini mw">수정</a></li>
               <li><a href="#" th:onclick="|boardDelete( ${board.getId()} ) |" class="sbtnMini mw" type="button">삭제</a></li>
               <li><a href="#" th:href="|@{/board/list( page=${page}, size=${size}, sort='id,desc' )}|" class="sbtnMini mw">목록</a></li>
             </ul>

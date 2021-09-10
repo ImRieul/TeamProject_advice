@@ -15,25 +15,43 @@ public class UserRepositoryTest extends TeamProjectAdviceApplicationTests {
     @Autowired
     private UserRepository userRepository;
 
+
     @Test
     public void create() {
 //        insert info user values(id, account);
-        User user1 = new User();
-
-        user1.setAccount("ju03");
-        user1.setPassword("dksking");
-        user1.setStatus("ready");
-
-        user1.setPhoneNumber("010-0000-0000");
-        user1.setRegisteredAt(LocalDateTime.now());
-
-        user1.setCreatedAt(LocalDateTime.now());
-        user1.setCreatedBy("admin01");
-
-        User newUser = userRepository.save(user1);
-        System.out.println(newUser);
+//        User user1 = new User();
+//
+//        user1.setAccount("ju03");
+//        user1.setPassword("dksking");
+//        user1.setStatus("ready");
+//
+//        user1.setPhoneNumber("010-0000-0000");
+//        user1.setRegisteredAt(LocalDateTime.now());
+//
+//        user1.setCreatedAt(LocalDateTime.now());
+//        user1.setCreatedBy("admin01");
+//
+//        User newUser = userRepository.save(user1);
+//        System.out.println(newUser);
 
         // insert into user values(id, account, ...)
+
+        for (int i=0; i<10; i++) {
+            String passwordHash = "ju" + i;
+
+            User user = User.builder()
+                        .account("ju" + i)
+                        .password("$2a$10$" + passwordHash.hashCode())
+                        .status("ready")
+                        .phoneNumber("010-0000-000" + i)
+                        .registeredAt(LocalDateTime.now())
+                        .createdAt(LocalDateTime.now())
+                        .createdBy("admin")
+                        .build();
+
+            userRepository.save(user);
+        }
+
 
     }
 
@@ -82,5 +100,24 @@ public class UserRepositoryTest extends TeamProjectAdviceApplicationTests {
             userRepository.delete(u);
         });
     }
+
+//    @Test
+//    public void userPasswordTest() {
+//        String str = "MocketHttpServletRequest:\n" +
+//                "        Http Method = GET\n" +
+//                "        Request URI = /user/login\n" +
+//                "         Parameters = {}\n" +
+//                "            Herders = []\n" +
+//                "               Body = <no charater encoding set>\n" +
+//                "      Session Attrs = {}\n" +
+//                "\n" +
+//                "Handler:\n" +
+//                "               Type = com.example.UserController\n" +
+//                "             Method = com.example.UserController#Login()\n" +
+//                "\n" +
+//                "Async:\n" +
+//                "      Async started = false";
+//        System.out.println(str);
+//    }
 
 }
