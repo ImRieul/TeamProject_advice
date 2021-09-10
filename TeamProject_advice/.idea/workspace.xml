@@ -10,8 +10,54 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="803aebeb-c7ce-46f7-a0c3-a70c7dc9df40" name="변경" comment="변경">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/controller/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/controller/BoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/controller/BoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/controller/BoardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/algorithm/BinarySearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/algorithm/BinarySearch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/Board$BoardBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/Board$BoardBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/Board.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/Category$CategoryBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/Category$CategoryBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/Category.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/Item$ItemBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/Item$ItemBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/OrderBox$OrderBoxBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/OrderBox$OrderBoxBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/OrderBox.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/OrderBox.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/OrderDetail$OrderDetailBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/OrderDetail$OrderDetailBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/OrderDetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/OrderDetail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/Partner$PartnerBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/Partner$PartnerBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/Partner.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/Partner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/User$UserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/User$UserBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/UserPhoto$UserPhotoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/UserPhoto$UserPhotoBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/UserPhoto.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/model/entity/UserPhoto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/repository/BoardRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/repository/BoardRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/service/implement/BoardService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/service/implement/BoardService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/service/implement/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/service/implement/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/service/interfaces/BoardServiceInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/service/interfaces/BoardServiceInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/service/interfaces/UserServiceInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/teamproject_advice/service/interfaces/UserServiceInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/controller/BoardCommentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/dto/BoardCommentRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/model/entity/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/model/entity/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/model/entity/BoardComment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/model/entity/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/model/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/model/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/repository/BoardCommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/repository/CommentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/service/implement/BoardCommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/service/implement/CommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/service/implement/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/service/implement/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/service/interfaces/BoardCommentServiceInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/service/interfaces/CommentServiceInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/service/interfaces/UserServiceInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/service/interfaces/UserServiceInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/teamproject_advice/repository/BoardCommentRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/teamproject_advice/repository/CommentRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,8 +99,8 @@
       <list>
         <option value="CSS File" />
         <option value="Interface" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -110,7 +156,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/img" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="아티팩트" />
+    <property name="project.structure.last.edited" value="프로젝트" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -128,6 +174,17 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.TeamProjectAdviceApplication">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BinarySearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.teamproject_advice.model.algorithm.BinarySearch" />
       <module name="TeamProject_advice.main" />
@@ -140,38 +197,6 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BoardRepositoryTest.create" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.teamproject_advice.repository.BoardRepositoryTest.create&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
     </configuration>
     <configuration name="BoardRepositoryTest.offsetTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -236,6 +261,27 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="UserRepositoryTest.create" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.example.teamproject_advice.repository.UserRepositoryTest.create&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="test" type="JUnit" factoryName="JUnit">
       <module name="TeamProject_advice.test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -258,21 +304,21 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Gradle.BoardRepositoryTest.create" />
       <item itemvalue="Gradle.BoardRepositoryTest.pageTest" />
       <item itemvalue="Gradle.BoardRepositoryTest.searchTest" />
       <item itemvalue="Gradle.BoardRepositoryTest.offsetTest" />
       <item itemvalue="JUnit.test" />
       <item itemvalue="Spring Boot.TeamProjectAdviceApplication" />
       <item itemvalue="애플리케이션.BinarySearch" />
+      <item itemvalue="Gradle.UserRepositoryTest.create" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.UserRepositoryTest.create" />
         <item itemvalue="Gradle.BoardRepositoryTest.searchTest" />
         <item itemvalue="Gradle.BoardRepositoryTest.offsetTest" />
         <item itemvalue="Gradle.BoardRepositoryTest.pageTest" />
         <item itemvalue="애플리케이션.BinarySearch" />
-        <item itemvalue="Gradle.BoardRepositoryTest.create" />
       </list>
     </recent_temporary>
   </component>

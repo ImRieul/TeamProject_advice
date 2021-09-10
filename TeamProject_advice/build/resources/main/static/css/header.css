@@ -22,7 +22,6 @@ nav ul li a {
     text-decoration: none;
     color: black;
     transition: all 0.25s;
-    font-size: 12px;
 }
 
 nav ul li a:hover {
@@ -41,7 +40,7 @@ nav ul li a:hover {
 }
 
 .fixed-top {
-    /*position: fixed;*/
+    position: fixed;
     top: 0;
     overflow: hidden;
     width: 100%;

@@ -4,16 +4,17 @@ import com.example.teamproject_advice.model.entity.Board;
 import com.example.teamproject_advice.service.implement.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RequiredArgsConstructor
@@ -29,14 +30,14 @@ public class BoardController {
     public String list(@RequestParam(value = "search", required = false) String search,
                        Model model, Pageable pageable) {
 
-        // 검색한 내용이 없을 때 (search param이 없을 때)
-        Page<Board> boardPage = ( search == null || search.isEmpty() )? service.boardListPage(pageable) : service.searchBoardPage(search, service.checkPageable(pageable));
+        //         검색한 내용이 없을 때 (search param이 없을 때)
+        Page<Board> boardPage = ( search.isEmpty() )? service.boardListPage(pageable) : service.searchBoardPage(search, pageable);
 
         // model(return) 에 값을 전송
         model.addAttribute("list", boardPage);                          // list(key), boardPage(value, Page type)
-        model.addAttribute("paging", service.paging(pageable, boardPage.getTotalPages()));         // paging(key), 페이지 번호를 위한 list(value, List type)
-        model.addAttribute("page", service.checkPageable(pageable));    // page(key), 현재 페이지 정보 detail에 전달용(value, Pageable type)
-        model.addAttribute("lastPageNumber", service.boardListLastPage(pageable.getPageSize() -1, search));   // lastPageNumber(key), 마지막 페이지 확인용(value, int type)
+        model.addAttribute("paging", service.paging(pageable));         // paging(key), 페이지 번호를 위한 list(value, List type)
+        model.addAttribute("page", service.checkPageable(pageable));    // page(key), 현재 페이지 정보 detail에 전달용(value, int type)
+        model.addAttribute("lastPageNumber", service.boardListLastPage(pageable.getPageSize()) -1);   // lastPageNumber(key), 마지막 페이지 확인용(value, int type)
 
         model.addAttribute("search", search);       // search(key), value String type
 
@@ -54,8 +55,6 @@ public class BoardController {
         model.addAttribute("board", board);     // board(key), board(value, Board type)
 
         // model(return) 에 값을 전송
-
-        model.addAttribute("dateFotmat", DateTimeFormatter.ofPattern("yyyy MM dd"));
         model.addAttribute("boardNext", service.findById(id+1));        // boardNext(key), 다음 글(value, board type)
         model.addAttribute("boardPrev", service.findById(id-1));        // boardPrev(key), 이전 글(value, board type)
 
@@ -74,47 +73,4 @@ public class BoardController {
 
         return "board/detail";
     }
-
-
-    @PostMapping("/beforeWrite")
-    public String beforeWrite(@RequestParam(value = "boardId", required = false) Long id,
-                              Model model) {
-        System.out.println("berforeWrite : " + id);
-        model.addAttribute("boardId");
-        return "/board/write";
-    }
-
-    @PostMapping("/write.do")
-    public String write(@RequestParam(value = "boardId", required = false) Long id,
-                        @RequestParam(value = "title") String title,
-                        @RequestParam(value = "comment") String comment,
-                        Model model) {
-        System.out.println("write : " + id);
-        System.out.println("write : " + title);
-        System.out.println("write : " + comment);
-
-
-//        String returnView = "/board/detail(id=" + id + ")";
-        String returnView = "/board/list";
-        return "redirect:/board/list";
-    }
-
-
-    @PostMapping("/detail/delete.do")
-    public String boardDelete(@RequestParam(value = "id", required = false) Long id) {
-        switch ( service.BoardDelete(id) ) {
-            case "success":
-                System.out.println("delete.do : " + id + "번 게시글 삭제 성공");
-                break;
-            case "fail":
-                System.out.println("delete.do : " + id + "번 게시글이 없습니다");
-            case "error":
-                System.out.println("delete.do : " + id + "번 게시글 삭제 중 에러");
-                break;
-            default:
-                System.out.println(service.BoardDelete(id));
-        }
-        return "redirect:/board/list";
-    }
-
 }

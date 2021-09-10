@@ -7,49 +7,8 @@
   <title>board</title>
   <meta charset="UTF-8">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <link rel="stylesheet" href="../../static/css/board/reset.css" th:href="@{/css/board/reset.css}">
-  <link rel="stylesheet" href="../../static/css/board/list.css" th:href="@{/css/board/detail.css}">
+  <link rel="stylesheet" href="../../static/css/board/list.css" th:href="@{/css/board/list.css}">
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-
-  <th:block layout:fragment="script">
-    <script th:inline="javascript">
-        /* <![CDATA[ */
-        function url() {
-            // /* 내용 */ 이렇게 띄우면 에러남 /*내용*/ 이렇게 사용할 것
-            return /*[[ @{/board/detail/} ]]*/;
-        }
-        function boardWrite() {
-            let uri = /*[[ @{/board/beforeWrite} ]]*/;
-            let id = /*[[ ${board.getId()} ]]*/;
-            let html = "";
-
-            html += '<form name="idForm" action="' + uri + '" method="post">';
-            html +=   '<input type="hidden" name="boardId" value="' + id + '"/>';
-            html += '</form>';
-
-            $("body").append(html);
-            document.idForm.submit();
-        }
-
-        function boardDelete(id) {
-            if ( confirm( "게시글을 삭제할까요?" ) ) {
-                let uri = url() + "delete.do";
-                let html = "";
-
-                html += '<form name=dataForm action="' + uri + '" method="post">' +
-                            '<input type="hidden" name="id" value="' + id + '"/>' +
-                        '</form>';
-                $("body").append(html);
-                document.dataForm.submit();
-
-                alert("게시글을 삭제하였습니다");
-            }
-        }
-      /* ]]> */
-
-    </script>
-  </th:block>
-
 </head>
 
 <body>
@@ -62,13 +21,11 @@
           <div class="viewHead">
             <div class="subject">
               <ul>
-                <li th:text="${board.getTitle()}">쟈뎅 전문 쇼핑몰 쟈뎅샵이 리뉴얼 오픈합니다.</li>
+                <li>쟈뎅 전문 쇼핑몰 쟈뎅샵이 리뉴얼 오픈합니다.</li>
               </ul>
             </div>
             <div class="day">
-              <p class="txt">작성일
-                <span th:text="${ board.getRegisteredAt() }">14.01.28</span>
-              </p>
+              <p class="txt">작성일<span>14.01.28</span></p>
             </div>
           </div>
 
@@ -95,7 +52,7 @@
         <!-- 이전다음글 -->
         <div class="pnDiv web">
           <table summary="이전다음글을 선택하여 보실 수 있습니다." class="preNext" border="1" cellspacing="0">
-            <!-- <caption>이전다음글</caption> -->
+            <caption>이전다음글</caption>
             <colgroup>
               <col width="100px" />
               <col width="*" />
@@ -104,7 +61,7 @@
             <tr>
               <th class="next">NEXT</th>
               <td>
-                <a href="#" th:if="${boardNext} != null" th:href="|@{/board/detail( id=${boardNext.getId()}, size=${size} )}|" th:text="${boardNext.getTitle()}"></a>
+                <a href="#" th:if="${boardNext} != null" th:href="|@{/board/detail( id=${boardNext.getId()}, size=${size}} )}|" th:text="${boardNext.getTitle()}"></a>
                 <div href="#" th:if="${boardNext} == null" th:text="#{board.nextNull}"></div>
               </td>
             </tr>
@@ -126,8 +83,6 @@
         <div class="btnArea btline">
           <div class="bRight">
             <ul>
-              <li><a href="#" th:onclick="boardWrite()" class="sbtnMini mw">수정</a></li>
-              <li><a href="#" th:onclick="|boardDelete( ${board.getId()} ) |" class="sbtnMini mw" type="button">삭제</a></li>
               <li><a href="#" th:href="|@{/board/list( page=${page}, size=${size}, sort='id,desc' )}|" class="sbtnMini mw">목록</a></li>
             </ul>
           </div>

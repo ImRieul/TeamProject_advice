@@ -7,7 +7,7 @@ footer {
 }
 
 .fixed-bottom {
-    /*position: fixed;*/
+    position: fixed;
     bottom: 0;
     overflow: hidden;
     width: 100%;
