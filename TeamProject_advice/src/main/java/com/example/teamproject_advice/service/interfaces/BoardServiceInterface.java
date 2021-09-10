@@ -10,10 +10,14 @@ import java.util.List;
 
 public interface BoardServiceInterface {
     Page<Board> boardListPage(Pageable pageable);
-    int boardListLastPage(int size);
+    Page<Board> searchBoardPage(String search, Pageable pageable);
+
+    String BoardDelete(Long id);
+
     Pageable checkPageable(Pageable pageable);
     Board findById(Long id);
-    List<Integer> paging(Pageable pageable);
+    List<Integer> paging(Pageable pageable, int totalPage);
+
+    int boardListLastPage(int size, String search);
     int returnPageNumber(Long id, int size);
-    Page<Board> searchBoardPage(String search, Pageable pageable);
 }
