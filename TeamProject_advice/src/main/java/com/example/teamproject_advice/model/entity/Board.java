@@ -38,4 +38,6 @@ public class Board {
 //    @OneToMany(fetch = FetchType.LAZY, mappedBy = "board")
 //    private List<Comment> commentList;
 
+
+
 }

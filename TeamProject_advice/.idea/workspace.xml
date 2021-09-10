@@ -10,8 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="803aebeb-c7ce-46f7-a0c3-a70c7dc9df40" name="변경" comment="변경">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/controller/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/model/entity/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/model/entity/Board.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,8 +77,8 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/model/entity/User.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/repository/UserRepository.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/teamproject_advice/model/entity/User.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
@@ -127,7 +134,7 @@
       <recent name="com.example.teamproject_advice.repository" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.TeamProjectAdviceApplication">
+  <component name="RunManager" selected="Gradle.BoardRepositoryTest.pageTest">
     <configuration name="BinarySearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.teamproject_advice.model.algorithm.BinarySearch" />
       <module name="TeamProject_advice.main" />
@@ -255,15 +262,6 @@
       <item itemvalue="Spring Boot.TeamProjectAdviceApplication" />
       <item itemvalue="애플리케이션.BinarySearch" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Gradle.UserRepositoryTest.create" />
-        <item itemvalue="Gradle.BoardRepositoryTest.searchTest" />
-        <item itemvalue="Gradle.BoardRepositoryTest.offsetTest" />
-        <item itemvalue="Gradle.BoardRepositoryTest.pageTest" />
-        <item itemvalue="애플리케이션.BinarySearch" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
