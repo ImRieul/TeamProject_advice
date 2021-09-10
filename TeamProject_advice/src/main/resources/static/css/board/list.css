@@ -230,11 +230,6 @@ html{overflow-y:scroll; width:100%;}
 .saleRight{position:absolute; right:-30px; top:-170px; width:46px; height:46px; background:url('../images/btn/btn_roll_right.png') no-repeat left top; z-index:9999;}
 
 
-
-
-
-
-
 /******* footer ********/
 #footerWrap{width:100%; margin:56px 0 0 0; overflow:hidden;}
 #footerWrap #footer{width:100%; background:#ebebeb; margin:0 auto;}

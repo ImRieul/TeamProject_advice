@@ -47,6 +47,7 @@ public class User {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
     private List<Board> boardList;
 
-    // 1 : N
-
+//    // 1 : N
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+//    private List<Comment> commentList;
 }

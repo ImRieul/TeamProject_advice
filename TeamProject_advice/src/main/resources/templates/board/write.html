@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/layout/main_layout}">
+
+<head>
+  <title>board</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="../../static/css/board/reset.css" th:href="@{/css/board/reset.css}">
+  <link rel="stylesheet" href="../../static/css/board/write.css" th:href="@{/css/board/write.css}">
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+  <th:block layout:fragment="script">
+    <script th:inline="javascript">
+        /* <![CDATA[ */
+        $("#run").click(function() {
+            let id = /*[[ ${boardId} ]]*/;
+
+            let html = '<input type="hidden" name="boardId" value="' + id + '"/>';
+
+            $('#mypage').append(html).submit();
+        })
+        /* ]]> */
+    </script>
+  </th:block>
+
+</head>
+<body>
+<div layout:fragment="content">
+
+<div id="contents">
+  <form id="mypage" name="writeForm" method="post" action="/board/write.do" th:action="@{/board/write.do}">
+    <div class="checkDivTab">
+      <table class="checkTable" border="1">
+        <colgroup>
+          <col width="19%" class="tw30" />
+          <col width="*" />
+        </colgroup>
+
+        <tbody>
+          <tr>
+            <th scope="row"><span>제목</span></th>
+            <td>
+              <input name="title" type="text" class="wlong" />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" class="comment"><span>상세 내용</span></th>
+            <td>
+              <textarea name="comment" class="tta"></textarea>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="btnArea">
+      <div class="bCenter">
+        <ul>
+          <li><a href="#" th:href="@{/board/list}" class="nbtnbig">취소</a></li>
+<!--          <li><a href="#" th:onclick="write()" class="sbtnMini">확인</a></li>-->
+          <li><button id="run" class="sbtnMini">확인</button></li>
+        </ul>
+      </div>
+    </div>
+    <!-- //Btn Area -->
+
+  </form>
+</div>
+<!-- //contents -->
+
+</div>
+</body>
+</html>
