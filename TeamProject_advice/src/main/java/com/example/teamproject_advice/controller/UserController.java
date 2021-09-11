@@ -33,4 +33,23 @@ public class UserController {
         return "/user/register";
     }
 
+    @PostMapping("/registerAction.do")
+    public String registerAction(String account, String pw, String phone,
+                                 String gender, String color, String myTemp,
+                                 String clotheStyle) {
+
+        if ( service.userLogin(account, pw) ) { return "redirect:/user/login"; }
+
+        System.out.println(account);
+        System.out.println(pw);
+        System.out.println(phone);
+        System.out.println(gender);
+        System.out.println(color);
+        System.out.println(myTemp);
+        System.out.println(clotheStyle);
+
+        return "redirect:/user/register";
+
+    }
+
 }

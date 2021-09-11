@@ -16,7 +16,7 @@
 
 <body>
 <div class="mBox" layout:fragment="content">
-  <form class="form-horizontal" method="post" th:action="@{/user/loginAction.do}">
+  <form class="form-horizontal" method="post" th:action="@{/user/registerAction.do}">
     <div class="form-group">
       <label for="inputEmail3" class="col-sm-2 control-label">계정</label>
       <div class="col-sm-10">
@@ -34,7 +34,7 @@
     <div class="form-group">
       <label for="inputPassword3" class="col-sm-2 control-label">휴대폰 번호</label>
       <div class="col-sm-10">
-        <input name="text" type="text" class="form-control" id="inputPhoneNumber" placeholder="휴대폰 번호를 입력해주세요">
+        <input name="phone" type="text" class="form-control" id="inputPhoneNumber" placeholder="휴대폰 번호를 입력해주세요">
       </div>
     </div>
 
@@ -51,7 +51,7 @@
     <div class="form-group">
       <label for="inputPassword3" class="col-sm-2 control-label">Personal Color</label>
       <div class="col-sm-10">
-        <select name="personalColor" class="form-control">
+        <select name="color" class="form-control">
           <option>몰라요</option>
           <option>봄웜톤</option>
           <option>가을웜톤</option>
@@ -64,7 +64,7 @@
     <div class="form-group">
       <label for="inputPassword3" class="col-sm-2 control-label">온도센서</label>
       <div class="col-sm-10">
-        <select name="temp" class="form-control">
+        <select name="myTemp" class="form-control">
           <option>기본</option>
           <option>추위를 잘타요</option>
           <option>더위를 잘타요</option>
@@ -76,7 +76,7 @@
     <div class="form-group">
       <label for="inputPassword3" class="col-sm-2 control-label">선호하는 스타일</label>
       <div class="col-sm-10">
-        <select name="personalColor" class="form-control">
+        <select name="clotheStyle" class="form-control">
           <option>없음</option>
           <option>깔끔</option>
           <option>편함</option>
