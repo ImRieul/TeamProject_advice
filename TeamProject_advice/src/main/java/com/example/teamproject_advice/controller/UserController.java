@@ -24,6 +24,8 @@ public class UserController {
         return "/user/login";
     }
 
+
+    //로그인
     @PostMapping("/loginAction.do")
     public String loginAction(@RequestParam(value = "account") String acc,
                               @RequestParam(value = "password") String pw) {
@@ -36,11 +38,21 @@ public class UserController {
     }
 
 
+
+    //회원 가입
+    private final UserRepository userRepository;
+
     @PostMapping("/regi.do")
     public String regi(@RequestParam(value = "account") String acc,
                                  @RequestParam(value = "password") String pw,
                                  @RequestParam(value = "phoneNumber") String phone) {
+
         service.create(acc, pw, phone);
+
+//        if (userRepository.findById(acc, phone) ) {
+//            acc.isEmpty();
+//            phone.isEmpty();
+//        }
 
         return "redirect:/user/login";
 

@@ -29,15 +29,19 @@ public class UserService implements UserServiceInterface {
                 .build();
 
         userRepository.save(user);
+
     }
 
     @Override
     public User read(String account, String password) {
         User user = userRepository.findByAccountAndPassword(account, password);
-        if ( user == null) {
+        if ( user == null ) {
+            return user;
+        }
+        else{
+            System.out.println(user);
         }
 
-        System.out.println(user.toString());
         return user;
 
     }

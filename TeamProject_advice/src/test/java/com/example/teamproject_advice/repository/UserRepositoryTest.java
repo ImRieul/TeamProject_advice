@@ -83,4 +83,8 @@ public class UserRepositoryTest extends TeamProjectAdviceApplicationTests {
         });
     }
 
+    @Test
+    public void regiTest() {
+        System.out.println(userRepository.findByAccount("abc123"));
+    }
 }
