@@ -57,8 +57,6 @@ public class BoardService implements BoardServiceInterface {
     }
 
     // 게시글 생성, 수정
-
-
     @Override
     public void boardWrite(Board board, Long id) {
         // 게시글 생성
