@@ -24,7 +24,7 @@ public class Board {
 
     private String title;
     private String content;
-    private Long writer;
+    private Long viewCount;
 
     private LocalDateTime registeredAt;
     private LocalDateTime createdAt;
