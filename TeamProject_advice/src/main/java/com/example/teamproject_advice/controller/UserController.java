@@ -4,6 +4,7 @@ package com.example.teamproject_advice.controller;
 import com.example.teamproject_advice.service.implement.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,7 +30,8 @@ public class UserController {
     }
 
     @GetMapping("/register")
-    public String register() {
+    public String register(Model model) {
+        model.addAttribute("clotheStyleList", service.clotheStyleList());
         return "/user/register";
     }
 
