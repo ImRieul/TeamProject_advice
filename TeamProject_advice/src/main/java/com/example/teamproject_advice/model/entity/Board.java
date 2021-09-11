@@ -24,7 +24,7 @@ public class Board {
 
     private String title;
     private String content;
-    private Long writer;
+    private Long viewCount;
 
     private LocalDateTime registeredAt;
     private LocalDateTime createdAt;
@@ -35,7 +35,7 @@ public class Board {
     @ManyToOne      // N : 1
     private User user;
 
-    // board : BoardComment > 1 : N
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "board")
-    private List<BoardComment> boardCommentList;
+//    // board : BoardComment > 1 : N
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "board")
+//    private List<BoardComment> boardCommentList;
 }

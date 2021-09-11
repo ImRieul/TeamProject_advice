@@ -66,7 +66,7 @@ public class BoardService implements BoardServiceInterface {
             board.setUser(userRepository.findById(id).orElse(null))
                     .setCreatedAt(LocalDateTime.now())
                     .setCreatedBy("user")
-                    .setRegisteredAt(LocalDateTime.now())
+                    .setRegisteredAt(LocalDateTime.now());
         }
     }
 
