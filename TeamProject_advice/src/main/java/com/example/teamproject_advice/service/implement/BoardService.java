@@ -2,6 +2,7 @@ package com.example.teamproject_advice.service.implement;
 
 import com.example.teamproject_advice.model.entity.Board;
 import com.example.teamproject_advice.repository.BoardRepository;
+import com.example.teamproject_advice.repository.UserRepository;
 import com.example.teamproject_advice.service.interfaces.BoardServiceInterface;
 import lombok.Builder;
 import lombok.RequiredArgsConstructor;
@@ -11,6 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -22,6 +24,7 @@ import java.util.List;
 public class BoardService implements BoardServiceInterface {
 
     private final BoardRepository boardRepository;
+    private final UserRepository userRepository;
 
     // List : 두루마리, Page : 책. List는 한 페이지로 된 문서라면, Page는 그 문서에 순서를 매겨 책처럼 만든 것이다
     // pageable.getPageSize : 몇 개의 객체를 기준으로 한 페이지를 구성했는지
@@ -47,14 +50,27 @@ public class BoardService implements BoardServiceInterface {
         return boardRepository.findAll(setPageable);
     }
 
+    // 게시글 검색
     @Override
     public Page<Board> searchBoardPage(String search, Pageable pageable) {
         return boardRepository.findByTitleContaining(search, pageable);
     }
 
+    // 게시글 생성, 수정
+
+
+    @Override
+    public void boardWrite(Board board, Long id) {
+        // 게시글 생성
+        if ( id == null ) {
+            board.setUser(userRepository.findById(id).orElse(null))
+                    .setCreatedAt(LocalDateTime.now())
+                    .setCreatedBy("user")
+                    .setRegisteredAt(LocalDateTime.now())
+        }
+    }
 
     // ========== 게시글 삭제 ==========
-
     @Override
     public String BoardDelete(Long id) {
         try {

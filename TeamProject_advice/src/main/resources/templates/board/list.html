@@ -16,7 +16,7 @@
         /* <![CDATA[ */
 
         function boardWrite() {
-            uri = /*[[ @{/board/beforeWrite} ]]*/;
+            uri = /*[[ @{/board/write} ]]*/;
             html = '<form name="nonIdForm" action="' + uri + '" method="post"/>';
             $("body").append(html);
             document.nonIdForm.submit();

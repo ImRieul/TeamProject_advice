@@ -6,10 +6,10 @@ import java.util.List;
 
 public interface UserServiceInterface {
 
-    List<String> clotheStyleList();
+    List<String> clotheStyleList();     // 선호하는 옷 스타일 리스트
+    void registerUser(User user);
 
-
-    boolean userLogin(String account, String password);
+    boolean isUser(String account, String password);
     boolean isAccount(String account);
     boolean isPhoneNumber(String phoneNumber);
 }

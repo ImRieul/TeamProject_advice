@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,7 +34,19 @@ public class UserService implements UserServiceInterface {
     }
 
     @Override
-    public boolean userLogin(String account, String password) {
+    public void registerUser(User user) {
+        User createUser = user;
+
+        user.setCreatedAt(LocalDateTime.now())
+                .setCreatedBy("admin")
+                .setRegisteredAt(LocalDateTime.now())
+                .setStatus("exist");
+
+        userRepository.save(user);
+    }
+
+    @Override
+    public boolean isUser(String account, String password) {
         User user = userRepository.findByAccountAndPassword(account, password);
 
         if ( user == null ) { return false; } else { return true; }
