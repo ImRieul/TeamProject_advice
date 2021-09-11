@@ -1,1 +1,2 @@
-.form-control{ width: 83.3%;}
+.mBox {display: flex; justify-content: center;}
+.mBox form{ width: 600px;}
