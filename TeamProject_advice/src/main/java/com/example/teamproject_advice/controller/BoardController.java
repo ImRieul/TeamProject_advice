@@ -76,19 +76,24 @@ public class BoardController {
     }
 
 
-    @PostMapping("/beforeWrite")
+    // 글쓰기 창
+    @PostMapping("/write")
     public String beforeWrite(@RequestParam(value = "boardId", required = false) Long id,
                               Model model) {
         System.out.println("berforeWrite : " + id);
-        model.addAttribute("boardId");
+        model.addAttribute("boardId", id);
         return "/board/write";
     }
 
-    @PostMapping("/write.do")
-    public String write(@RequestParam(value = "boardId", required = false) Long id,
+    @PostMapping("/writeAction.do")
+    public String write(@RequestParam(value = "id", required = false) Long id,
                         @RequestParam(value = "title") String title,
                         @RequestParam(value = "comment") String comment,
                         Model model) {
+
+        if ( id == null ) {
+
+        }
         System.out.println("write : " + id);
         System.out.println("write : " + title);
         System.out.println("write : " + comment);

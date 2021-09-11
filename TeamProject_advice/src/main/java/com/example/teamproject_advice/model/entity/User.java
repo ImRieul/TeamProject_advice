@@ -32,6 +32,11 @@ public class User {
     private LocalDateTime registeredAt;
     private LocalDateTime unregisteredAt;
 
+    private String gender;
+    private String color;
+    private String myTemp;
+    private String clotheStyle;
+
     @CreatedDate
     private LocalDateTime createdAt;
     @CreatedBy

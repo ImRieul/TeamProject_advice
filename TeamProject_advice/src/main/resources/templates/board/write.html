@@ -17,9 +17,9 @@
         $("#run").click(function() {
             let id = /*[[ ${boardId} ]]*/;
 
-            let html = '<input type="hidden" name="boardId" value="' + id + '"/>';
-
-            $('#mypage').append(html).submit();
+            // let html = '<input type="hidden" name="boardId" value="' + id + '"/>';
+            // $('#mypage').append(html).submit();
+            $('#mypage').submit();
         })
         /* ]]> */
     </script>
@@ -30,7 +30,7 @@
 <div layout:fragment="content">
 
 <div id="contents">
-  <form id="mypage" name="writeForm" method="post" action="/board/write.do" th:action="@{/board/write.do}">
+  <form id="mypage" name="writeForm" method="post" action="/board/write.do" th:action="@{/board/writeAction.do}">
     <div class="checkDivTab">
       <table class="checkTable" border="1">
         <colgroup>
@@ -42,6 +42,7 @@
           <tr>
             <th scope="row"><span>제목</span></th>
             <td>
+              <input name="id" th:value="${boardId}" type="hidden" />
               <input name="title" type="text" class="wlong" />
             </td>
           </tr>
