@@ -15,10 +15,28 @@ public class UserService implements UserServiceInterface {
 
     private final UserRepository userRepository;
 
+
     @Override
-    @Transactional
-    public List<User> list() throws Exception {
-        System.out.println("UserService : " + userRepository.findAll().toString());
-        return userRepository.findAll();
+    public boolean userLogin(String account, String password) {
+        User user = userRepository.findByAccountAndPassword(account, password);
+
+        if ( user == null ) { return false; }
+        else { return true; }
+    }
+
+    @Override
+    public boolean isAccount(String account) {
+        User user = userRepository.findByAccount(account);
+
+        if ( user == null ) { return false; }
+        else { return true; }
+    }
+
+    @Override
+    public boolean isPhoneNumber(String phoneNumber) {
+        User user = userRepository.findByPhoneNumber(phoneNumber);
+
+        if ( user == null ) { return false; }
+        else { return true; }
     }
 }
