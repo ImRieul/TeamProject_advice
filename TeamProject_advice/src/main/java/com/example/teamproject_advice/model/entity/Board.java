@@ -34,8 +34,10 @@ public class Board {
 
     @ManyToOne      // N : 1
     private User user;
-
-//    // board : BoardComment > 1 : N
+    
 //    @OneToMany(fetch = FetchType.LAZY, mappedBy = "board")
 //    private List<Comment> commentList;
+
+
+
 }

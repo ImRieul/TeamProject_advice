@@ -31,7 +31,7 @@ public class BoardController {
                        Model model, Pageable pageable) {
 
         //         검색한 내용이 없을 때 (search param이 없을 때)
-        Page<Board> boardPage = ( search.isEmpty() )? service.boardListPage(pageable) : service.searchBoardPage(search, pageable);
+        Page<Board> boardPage = ( search == null || search.isEmpty() )? service.boardListPage(pageable) : service.searchBoardPage(search, pageable);
 
         // model(return) 에 값을 전송
         model.addAttribute("list", boardPage);                          // list(key), boardPage(value, Page type)
