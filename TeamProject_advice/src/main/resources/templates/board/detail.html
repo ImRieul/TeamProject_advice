@@ -99,16 +99,6 @@
           </div>
 
           <div class="answer">
-            <div class="inbox">
-              <div class="aname">
-                <p th:text="${board.getUser().getAccount()}"></p>
-                <span th:text="non"></span>
-              </div>
-              <span class="atxt" th:text="non"></span>
-            </div>
-          </div><p>
-
-          <div class="answer">
             <form class="commentForm" th:action="@{/board/commentWriteAction.do}" method="post">
               <span>댓글 작성</span>
               <div>
