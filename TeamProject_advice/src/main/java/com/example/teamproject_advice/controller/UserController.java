@@ -45,8 +45,9 @@ public class UserController {
                                  String gender, String color, String myTemp,
                                  String clotheStyle) {
 
-        if ( service.isUser(account, pw) ) { return "redirect:/user/register"; }
-        if ( service.isPhoneNumber(phone) ) { return "redirect:/user/register"; }
+        if ( service.isUser(account, pw) ||
+                service.isAccount(account) ||
+                service.isPhoneNumber(phone)) { return "redirect:/user/register"; }
 
         User user = User.builder()
                 .account(account)

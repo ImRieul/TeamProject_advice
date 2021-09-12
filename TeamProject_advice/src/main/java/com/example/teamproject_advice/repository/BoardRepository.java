@@ -15,11 +15,4 @@ import java.util.List;
 public interface BoardRepository extends JpaRepository<Board, Long> {
 
     Page<Board> findByTitleContaining(String title, Pageable pageable);
-//    public List<Board> findByIdLessThanAndIdGreaterThanEqualOrderByIdDesc(Long t, Long f);
-//
-//    public List<Board> findByTitleContainingOrderByIdDesc(String title);
-//
-//    public List<Board> findByUserContainingOrderByIdDesc(User user);
-
-//    public List<Board> findByCreatedAt
 }

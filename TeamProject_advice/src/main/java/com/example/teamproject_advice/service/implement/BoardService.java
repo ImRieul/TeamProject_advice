@@ -30,11 +30,11 @@ public class BoardService implements BoardServiceInterface {
     // pageable.getPageSize : 몇 개의 객체를 기준으로 한 페이지를 구성했는지
     // pageable.getPageNumber : 현재 몇 페이지인지. index와 마찬가지로 0페이지부터 시작한다
 
-    // .findAll(), 테이블의 모든 행을 가져온다.
+    // 현재 페이지 출력
     @Override
     public Page<Board> boardListPage(Pageable pageable) {
-        int lastPage = boardListLastPage(pageable.getPageSize(), null) -1;
-        int valPage = pageable.getPageNumber() -1;
+        int lastPage = boardListLastPage(pageable.getPageSize(), null);
+        int valPage = Math.max(pageable.getPageNumber(), 0);
 
         // 삼항 연산자, 항이 3개인 연산자. (조건)? 참일 때 : 거짓일 때;
 //        if (true) {
@@ -58,14 +58,31 @@ public class BoardService implements BoardServiceInterface {
 
     // 게시글 생성, 수정
     @Override
-    public void boardWrite(Board board, Long id) {
+    public void boardWrite(Long userId, Long boardId, String title, String content) {
+        Board board;
+
         // 게시글 생성
-        if ( id == null ) {
-            board.setUser(userRepository.findById(id).orElse(null))
-                    .setCreatedAt(LocalDateTime.now())
-                    .setCreatedBy("user")
-                    .setRegisteredAt(LocalDateTime.now());
+        if ( boardId == null ) {
+            board = Board.builder()
+                    .title(title)
+                    .content(content)
+                    .createdAt(LocalDateTime.now())
+                    .createdBy("user")
+                    .registeredAt(LocalDateTime.now())
+                    .viewCount(0L)
+                    .user(userRepository.findById(userId).orElse(null))
+                    .build();
         }
+        // 게시글 수정
+        else {
+            board = findById(boardId);
+            board.setTitle(title)
+                    .setContent(content)
+                    .setUpdatedAt(LocalDateTime.now())
+                    .setUpdatedBy("user");
+        }
+
+        boardRepository.save(board);
     }
 
     // ========== 게시글 삭제 ==========
@@ -95,9 +112,9 @@ public class BoardService implements BoardServiceInterface {
     @Override
     public int boardListLastPage(int size, String search) {
         Pageable pageable = PageRequest.of(0, size, Sort.Direction.DESC, "id");
-        Page<Board> page = (search == null)? boardRepository.findAll(pageable) : boardRepository.findByTitleContaining(search, pageable);
+        Page<Board> page = ( search == null )? boardRepository.findAll(pageable) : boardRepository.findByTitleContaining(search, pageable);
         int lastPage = page.getTotalPages();
-        return lastPage -1;
+        return Math.max(0, lastPage -1);            // index와 맞추기 위해
     }
 
     // id로 행을 검색하는 메서드, .orElse(null) : 값이 없을 때 null을 반환한다.

@@ -1,8 +1,11 @@
-package com.example.teamproject_advice.repository;
+package com.example.teamproject_advice.record;
 
 import com.example.teamproject_advice.TeamProjectAdviceApplicationTests;
 import com.example.teamproject_advice.model.entity.Board;
-import com.example.teamproject_advice.model.entity.BoardComment;
+import com.example.teamproject_advice.model.entity.Comment;
+import com.example.teamproject_advice.repository.BoardRepository;
+import com.example.teamproject_advice.repository.CommentRepository;
+import com.example.teamproject_advice.repository.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -10,10 +13,10 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
-public class BoardCommentRepositoryTest extends TeamProjectAdviceApplicationTests {
+public class CommentRepositoryTest extends TeamProjectAdviceApplicationTests {
 
     @Autowired
-    private BoardCommentRepository boardCommentRepository;
+    private CommentRepository boardCommentRepository;
     @Autowired
     private BoardRepository boardRepository;
     @Autowired
@@ -23,7 +26,7 @@ public class BoardCommentRepositoryTest extends TeamProjectAdviceApplicationTest
     public void create() {
         List<Board> boardList = boardRepository.findAll();
 
-        BoardComment comm1 = BoardComment.builder()
+        Comment comm1 = Comment.builder()
                 .user(userRepository.findAll().get(0))
                 .board(boardList.get(boardList.size()-1))
                 .comment("안할래")
@@ -32,13 +35,13 @@ public class BoardCommentRepositoryTest extends TeamProjectAdviceApplicationTest
                 .build();
 
 
-        BoardComment newBoardComment = boardCommentRepository.save(comm1);
-        System.out.println(newBoardComment);
+        Comment newComment = boardCommentRepository.save(comm1);
+        System.out.println(newComment);
     }
 
     @Test
     public void read() {
-        Optional<BoardComment> boardComment = boardCommentRepository.findById(2L);
+        Optional<Comment> boardComment = boardCommentRepository.findById(2L);
 
         boardComment.ifPresent(bc -> {
             System.out.println("댓글을 쓴 게시글 : "+bc.getBoard().getTitle());

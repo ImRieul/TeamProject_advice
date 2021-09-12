@@ -84,7 +84,7 @@
 
 
             <div class="btnAreaList">
-              <!-- 페이징이동1 -->
+              <!-- 페이징이동 -->
               <div class="allPageMoving1">
 
                 <a href="#" th:if="${ lastPageNumber == page.getPageNumber()-1 or page.getPageNumber()>4 }" th:href="@{/board/list(page=0, size=${page.getPageSize()}, sort='id,desc', search=${search})}" class="n">
@@ -104,7 +104,7 @@
                 </a>
 
               </div>
-              <!-- //페이징이동1 -->
+              <!-- //페이징이동 -->
             </div>
 
             <!-- 검색 -->
