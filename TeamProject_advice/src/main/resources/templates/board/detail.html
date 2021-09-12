@@ -46,6 +46,29 @@
                 alert("게시글을 삭제하였습니다");
             }
         }
+
+        function commentBoxMove (commentId) {
+            document.getElementById('commentBox').scrollIntoView(true);
+            let commentBoxId = 'comment' + commentId;
+            let comment = document.getElementById('comment'+commentId).innerHTML;
+
+            document.getElementById('commentId').value = commentId;
+            document.getElementById('commentBox').value = comment;
+        }
+
+        function commentDelete (commentId) {
+            if ( confirm( "댓글을 삭제할까요?" ) ) {
+                let uri = /*[[ @{/board/commentDelete.do} ]]*/;
+                let boardId = /*[[ ${board.getId()} ]]*/
+                html = '<form name="commentDeleteCall" method="post" action="' + uri +'">';
+                html += '<input name="commentId" value="' + commentId + '" type="hidden">';
+                html += '<input name="boardId" value="' + boardId + '" type="hidden">';
+                html += '</form>';
+
+                $("body").append(html);
+                document.commentDeleteCall.submit();
+            }
+        }
       /* ]]> */
 
     </script>
@@ -81,7 +104,7 @@
           </div>
 
           <!-- 댓글 -->
-          <div th:each="com : ${commentList}">
+          <div th:unless="${commentPage.isEmpty()}" th:each="com : ${commentPage}">
             <div class="answer" >
               <div class="inbox">
                 <div class="aname">
@@ -89,11 +112,11 @@
                   <input name="commentId" th:value="${com.getId()}" type="hidden">
                   <span th:text="${com.getRegisteredAt()}"></span>
                 </div>
-                <span class="atxt" th:text="${com.getComment()}"></span>
+                <span class="atxt" th:id="${'comment' + com.getId()}" th:text="${com.getComment()}"></span>
               </div>
               <div class="commentButtonBox">
-                <button name="commentUpdate" type="button" th:text="수정">수정</button>
-                <button name="commentDelete" type="button" th:text="삭제">삭제</button>
+                <button id="commentUpdate" type="button" th:text="수정" th:onclick="| commentBoxMove(${com.getId()}) |">수정</button>
+                <button id="commentDelete" type="button" th:text="삭제" th:onclick="| commentDelete(${com.getId()}) |">삭제</button>
               </div>
             </div><p>
           </div>
@@ -102,8 +125,9 @@
             <form class="commentForm" th:action="@{/board/commentWriteAction.do}" method="post">
               <span>댓글 작성</span>
               <div>
-                <input name="boardId" th:value="${board.getId()}" type="hidden">
-                <textarea name="comment"></textarea>
+                <input id="boardId" name="boardId" th:value="${board.getId()}" type="hidden">
+                <input id="commentId" name="commentId" type="hidden">
+                <textarea id="commentBox" name="comment"></textarea>
                 <button type="submit" class="btn btn-default">등록</button>
               </div>
             </form>

@@ -8,7 +8,7 @@ import org.springframework.data.domain.Pageable;
 import java.util.List;
 
 public interface CommentServiceInterface {
-    Page<Comment> commentListPage(Pageable pageable);
+    Page<Comment> commentListPage(Board board, int page);
     void commentWrite(Long boardId, Long commentId, String content);
 
     String commentDelete(Long id);
@@ -17,6 +17,6 @@ public interface CommentServiceInterface {
     Comment findById(Long id);
     List<Integer> paging(Pageable pageable, int totalPage);
 
-    int commentListLastPage(int size, String search);
+    int commentListLastPage(Board board, String search);
     int returnPageNumber(Long id, int size);
 }

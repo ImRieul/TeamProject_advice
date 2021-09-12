@@ -7,6 +7,7 @@ import com.example.teamproject_advice.service.implement.BoardService;
 import com.example.teamproject_advice.service.implement.CommentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,8 +41,9 @@ public class BoardController {
         // model(return) 에 값을 전송
         model.addAttribute("list", boardPage);                          // list(key), boardPage(value, Page type)
         model.addAttribute("paging", Logic.paging(pageable, boardPage.getTotalPages()));         // paging(key), 페이지 번호를 위한 list(value, List type)
+//        model.addAttribute("paging", boardService.paging(pageable, boardPage.getTotalPages()));
         model.addAttribute("page", boardService.checkPageable(pageable));    // page(key), 현재 페이지 정보 detail에 전달용(value, Pageable type)
-        model.addAttribute("lastPageNumber", boardService.boardListLastPage(pageable.getPageSize(), search));   // lastPageNumber(key), 마지막 페이지 확인용(value, int type)
+        model.addAttribute("lastPageNumber", boardService.boardListLastPage(boardPage.getSize(), search));   // lastPageNumber(key), 마지막 페이지 확인용(value, int type)
 
         model.addAttribute("search", search);       // search(key), value String type
 
@@ -66,21 +68,13 @@ public class BoardController {
 
         // 목록으로
         model.addAttribute("page", boardService.returnPageNumber(id, size)); // page(key), 목록 번호(value, int type)
-        model.addAttribute(size);                               // size(key), page 설정 size(value, int type)
+        model.addAttribute("size", size);                               // size(key), page 설정 size(value, int type)
 
 
         // 댓글 테스트용
 
-        List<Comment> commentList = board.getCommentList();
-        model.addAttribute("commentList", commentList);
-
-        Map<String, String> testMap = new HashMap<>();
-
-        testMap.put("registeredAt", "2021-09-01 12:00");
-        testMap.put("comment", "테스트 내용입니다 테스트 내용입니다 테스트 내용입니다 테스트 내용입니다 테스트 내용입니다 테스트 내용입니다 테스트 내용입니다 테스트 내용입니다 테스트 내용입니다 테스트 내용입니다 테스트 내용입니다 테스트 내용입니다 테스트 내용입니다 테스트 내용입니다 테스트 내용입니다 테스트 내용입니다 테스트 내용입니다 ");
-        testMap.put("nickname", "멍청한비둘기들");
-
-        model.addAttribute("comment", testMap);     // comment(key), testMap(value, May<String, String> type)
+        Page<Comment> commentPage = commentService.commentListPage(board, 0);
+        model.addAttribute("commentPage", commentPage);
 
         return "board/detail";
     }
@@ -91,10 +85,14 @@ public class BoardController {
     public String beforeWrite(@RequestParam(value = "boardId", required = false) Long id,
                               Model model) {
         model.addAttribute("boardId", id);
-        Board board = boardService.findById(id);
 
-        model.addAttribute("titleText", board.getTitle());
-        model.addAttribute("contentText", board.getContent());
+        // 글 생성
+        if ( id != null ) {
+            Board board = boardService.findById(id);
+            model.addAttribute("titleText", board.getTitle());
+            model.addAttribute("contentText", board.getContent());
+        }
+
         return "/board/write";
     }
 
@@ -139,9 +137,10 @@ public class BoardController {
     }
 
     @PostMapping("/commentDelete.do")
-    public String commentDelete (Long commentId) {
-
-        return "redirect:/board/detail";
+    public String commentDelete (Long commentId, Long boardId) {
+        commentService.commentDelete(commentId);
+        return "redirect:/board/detail?id=" + boardId + "&size=" + 10;
     }
+
 
 }

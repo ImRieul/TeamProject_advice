@@ -34,7 +34,7 @@ public class BoardService implements BoardServiceInterface {
     @Override
     public Page<Board> boardListPage(Pageable pageable) {
         int lastPage = boardListLastPage(pageable.getPageSize(), null);
-        int valPage = pageable.getPageNumber();
+        int valPage = Math.max(pageable.getPageNumber(), 0);
 
         // 삼항 연산자, 항이 3개인 연산자. (조건)? 참일 때 : 거짓일 때;
 //        if (true) {
@@ -112,9 +112,9 @@ public class BoardService implements BoardServiceInterface {
     @Override
     public int boardListLastPage(int size, String search) {
         Pageable pageable = PageRequest.of(0, size, Sort.Direction.DESC, "id");
-        Page<Board> page = (search == null)? boardRepository.findAll(pageable) : boardRepository.findByTitleContaining(search, pageable);
+        Page<Board> page = ( search == null )? boardRepository.findAll(pageable) : boardRepository.findByTitleContaining(search, pageable);
         int lastPage = page.getTotalPages();
-        return lastPage -1;
+        return Math.max(0, lastPage -1);            // index와 맞추기 위해
     }
 
     // id로 행을 검색하는 메서드, .orElse(null) : 값이 없을 때 null을 반환한다.

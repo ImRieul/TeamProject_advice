@@ -24,13 +24,18 @@ public class CommentService implements CommentServiceInterface {
 
     // 현재 페이지 출력
     @Override
-    public Page<Comment> commentListPage(Pageable pageable) {
-        int lastPage = commentListLastPage(pageable.getPageSize(), null);
-        int valPage = pageable.getPageNumber();
+    public Page<Comment> commentListPage(Board board, int page) {
+        int lastPage = commentListLastPage(board,null);
+        int choosePage = Math.min(page, lastPage);
 
-        Pageable setPageable = (valPage > lastPage)? checkPageable( PageRequest.of(lastPage, pageSize, Sort.Direction.ASC, "id" ) ) : checkPageable( pageable );
-        return commentRepository.findAll(setPageable);
+        try {
+            Pageable pageable = PageRequest.of(choosePage, pageSize, Sort.Direction.ASC, "id");
+            return commentRepository.findByBoard(board, pageable);
+        }
+        catch (Exception e) {e.printStackTrace(); return null;}
     }
+
+
 
     @Override
     public void commentWrite(Long boardId, Long commentId, String content) {
@@ -61,7 +66,14 @@ public class CommentService implements CommentServiceInterface {
 
     @Override
     public String commentDelete(Long id) {
-        return null;
+        try {
+            if ( id != null ) {
+                commentRepository.delete(findById(id));
+                return "success";
+            }
+            else { return "fail"; }
+        } catch (Exception e) {e.printStackTrace(); return "error"; }
+
     }
 
     // url에 pageable이 입력되어 있는지 확인하는 메서드.
@@ -72,7 +84,7 @@ public class CommentService implements CommentServiceInterface {
 
     @Override
     public Comment findById(Long id) {
-        return null;
+        return commentRepository.findById(id).orElse(null);
     }
 
     @Override
@@ -81,9 +93,9 @@ public class CommentService implements CommentServiceInterface {
     }
 
     @Override
-    public int commentListLastPage(int size, String search) {
-        Pageable pageable = PageRequest.of(0, size, Sort.Direction.ASC);
-        Page<Comment> page = ( search == null )? commentRepository.findAll(pageable) : commentRepository.findByCommentContaining(search, pageable);
+    public int commentListLastPage(Board board, String search) {
+        Pageable pageable = PageRequest.of(0, pageSize, Sort.Direction.ASC, "id");
+        Page<Comment> page = ( search == null )? commentRepository.findByBoard(board, pageable) : commentRepository.findByCommentContaining(search, pageable);
         return page.getTotalPages() -1;
     }
 
