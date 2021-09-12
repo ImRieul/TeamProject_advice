@@ -15,9 +15,7 @@ html {
 }
 
 a.logo img {
-    width: 180px;
-    margin-top: 10px;
-    margin-left: 3px;
+    width: 130px;
 }
 
 nav {
@@ -70,7 +68,7 @@ nav ul li a:hover {
     background-repeat: no-repeat;
     overflow: hidden;
     background-position: center;
-    background-image: url("../img/background.jpg");
+    background-image: url("../img/fall02.jpg");
 }
 
 .page {
