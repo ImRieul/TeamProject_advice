@@ -54,5 +54,5 @@ public class User {
 
     // 1 : N
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-    private List<BoardComment> boardCommentList;
+    private List<Comment> boardCommentList;
 }

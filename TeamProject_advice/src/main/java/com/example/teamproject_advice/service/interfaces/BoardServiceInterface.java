@@ -11,7 +11,7 @@ import java.util.List;
 public interface BoardServiceInterface {
     Page<Board> boardListPage(Pageable pageable);
     Page<Board> searchBoardPage(String search, Pageable pageable);
-    void boardWrite(Board board, Long id);
+    void boardWrite(Long userId, Long boardId, String title, String content);
 
     String BoardDelete(Long id);
 

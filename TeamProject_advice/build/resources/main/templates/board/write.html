@@ -22,6 +22,18 @@
             $('#mypage').submit();
         })
         /* ]]> */
+        
+        window.onload=function() {
+            let id = /*[[ ${boardId} ]]*/;
+
+            if ( id != null ) {
+                const title = /*[[ ${titleText} ]]*/;
+                const content = /*[[ ${contentText} ]]*/;
+
+                $('#boardTitle').val(title);
+                $('#boardComment').val(content);
+            }
+        }
     </script>
   </th:block>
 
@@ -43,13 +55,13 @@
             <th scope="row"><span>제목</span></th>
             <td>
               <input name="id" th:value="${boardId}" type="hidden" />
-              <input name="title" type="text" class="wlong" />
+              <input id="boardTitle" name="title" type="text" class="wlong" />
             </td>
           </tr>
           <tr>
             <th scope="row" class="comment"><span>상세 내용</span></th>
             <td>
-              <textarea name="comment" class="tta"></textarea>
+              <textarea id="boardComment" name="comment" class="tta"></textarea>
             </td>
           </tr>
         </tbody>

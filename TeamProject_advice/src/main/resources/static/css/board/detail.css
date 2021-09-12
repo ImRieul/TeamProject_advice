@@ -1,5 +1,5 @@
 /* contents */
-#contents{display: flex; justify-content: center; width:670px;}
+#contents{width:670px;}
 #contents h2{height:86px; text-align:center; border-bottom:1px #5b524d solid;}
 #contents h2 strong{width:100%; display:block; font-size:40px; font-weight:600; color:#444; margin:0 0 10px 0;}
 #contents h2 span{width:100%; display:block; font-size:14px; color:#888; font-weight:normal; line-height:1.2; word-break:keep-all;}
@@ -12,7 +12,7 @@
 .viewHead .subject ul{width:100%; padding:11px 20px 10px 20px; overflow:hidden;}
 .viewHead .subject ul li{float:left; font-size:14px; color:#444; font-weight:600; line-height:1.3;}
 .viewHead .subject ul li.cate{width:76px; font-size:14px; color:#f7703c; font-weight:600;}
-.viewHead .day{position:relative; width:100%; font-size:14px; font-weight:600; color:#666; border-bottom:1px #d9d9d9 solid; overflow:hidden;}
+.viewHead .day{ display: flex; justify-content: space-between; position:relative; width:100%; font-size:14px; font-weight:600; color:#666; border-bottom:1px #d9d9d9 solid; overflow:hidden; }
 .viewHead .day p.txt{float:left; padding:13px 0 12px 0; margin:0 0 0 20px; color:#666;}
 .viewHead .day p.txt span{font-size:13px; color:#666; font-weight:normal; padding:0 18px 0 14px;}
 .viewHead .day p.btn{position:absolute; right:20px; top:10px;}
@@ -29,7 +29,7 @@
 
 /* answer */
 .answer{width:100%; background:#ebebeb; overflow:hidden; clear:both;}
-.answer .inbox{margin:20px;}
+.answer .inbox{margin:20px 20px 0px;}
 .answer .inbox .aname{padding:0 0 8px 0;}
 .answer .inbox .aname p{font-size:14px; font-weight:600; color:#666;}
 .answer .inbox .aname span{font-size:12px; color:#888;}
@@ -59,3 +59,13 @@
 
 .sbtnMini{display:block; width:60px; height:30px; line-height:30px; background:#f7703c; color:#fff !important; font-size:14px; font-weight:600; text-align:center;}
 .sbtnMini:hover{color:#fff;}
+
+.commentButtonBox { display: flex; justify-content: flex-end; margin-bottom: 10px; margin-right: 10px;}
+.commentButtonBox button { border: 0px; font-size: 12px;}
+
+/* comment */
+.commentForm { display: flex; justify-content: flex-start; margin: 20px 20px 15px 10px;}
+.commentForm span { flex-grow: 1; font-size: 10pt; padding-top: 10px; }
+.commentForm div { flex-grow: 15; display: flex; flex-direction: column; align-items: flex-end;}
+.commentForm div textarea { width: 100%; height: 100px; }
+.commentForm div button { margin-top: 10px; font-size: 13px;}
