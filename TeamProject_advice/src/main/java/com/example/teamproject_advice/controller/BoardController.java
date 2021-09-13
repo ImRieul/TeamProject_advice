@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -55,11 +56,15 @@ public class BoardController {
     @GetMapping("/detail")
     public String detail(@RequestParam("id") Long id,
                          @RequestParam("size") int size,
+                         Authentication authentication,
                          Model model) {
 
         Board board = boardService.findById(id);                 // id로 검색해서 테이블의 행 가져오기
-        model.addAttribute(board);     // board(key), board(value, Board type)와 동일
 
+        model.addAttribute("board", board);     // board(key), board(value, Board type)와 동일
+        boolean checkBoardAccount = authentication != null && board.getUser().getAccount().equals(authentication.getName());     // 로그인 정보가 있고, 계정이 일치하면 true
+
+        model.addAttribute("checkBoardAccount", checkBoardAccount);
         // model(return) 에 값을 전송
 
         model.addAttribute("dateFotmat", DateTimeFormatter.ofPattern("yyyy MM dd"));
@@ -75,6 +80,7 @@ public class BoardController {
 
         Page<Comment> commentPage = commentService.commentListPage(board, 0);
         model.addAttribute("commentPage", commentPage);
+        model.addAttribute("checkCommentAccount", commentService.checkCommentAccount(commentPage));
 
         return "board/detail";
     }
@@ -97,12 +103,10 @@ public class BoardController {
     }
 
     @PostMapping("/writeAction.do")
-    public String write(@RequestParam(value = "id", required = false) Long id,
-                        @RequestParam(value = "title") String title,
-                        @RequestParam(value = "comment") String comment,
-                        Model model) {
+    public String write(Board board, Model model,
+                        Authentication authentication) {
 
-        boardService.boardWrite(5L, id, title, comment);
+        boardService.boardWrite(authentication.getName(), board);
 
 //        String returnView = "/board/detail(id=" + id + ")";
         return "redirect:/board/list";
@@ -130,9 +134,14 @@ public class BoardController {
 
     // 댓글 생성
     @PostMapping("/commentWriteAction.do")
-    public String commentWriteAction (@RequestParam(value = "commentId", required = false) Long commentId,
-                                      Long boardId, String comment) {
-        commentService.commentWrite(boardId, commentId, comment);
+    public String commentWriteAction (String authAccount,
+                                      Authentication authentication,
+                                      Long boardId, Long commentId, String comment) {
+
+        if ( authAccount.equals(authentication.getName()) ) {
+            commentService.commentWrite(boardId, commentId, authentication.getName(), comment);
+        }
+
         return "redirect:/board/detail?id=" + boardId + "&size=" + 10;
     }
 

@@ -29,7 +29,7 @@ public class BoardRepositoryTest extends TeamProjectAdviceApplicationTests {
             Board board = Board.builder()
                             .title(i + "번째 게시글")
                             .content(i + "번째 게시글입니다.")
-                            .writer(1L)
+                            .viewCount(1L)
                             .registeredAt(LocalDateTime.now())
                             .createdAt(LocalDateTime.now())
                             .createdBy("admin")

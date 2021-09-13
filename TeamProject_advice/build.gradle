@@ -36,6 +36,15 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     // thymeleaf layout
     implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+
+    // --- spring security
+    // spring security starter
+    implementation("org.springframework.boot:spring-boot-starter-security")
+    // thymeleaf extras springSecurity4 (프레임워크 추가로 넣었음
+    implementation("org.thymeleaf.extras:thymeleaf-extras-springsecurity5")
+    // spring security test
+    testImplementation("org.springframework.security:spring-security-test")
+
 }
 
 test {

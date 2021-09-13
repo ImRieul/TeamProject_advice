@@ -5,6 +5,7 @@ import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 // 역할 : 테이블에 대응하는(column) 클래스
@@ -37,5 +38,5 @@ public class Board {
 
     // board : BoardComment > 1 : N
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "board")
-    private List<Comment> commentList;
+    private List<Comment> commentList = new ArrayList<>();
 }

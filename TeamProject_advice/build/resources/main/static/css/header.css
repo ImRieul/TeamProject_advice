@@ -25,7 +25,19 @@ nav ul li a {
     font-size: 14px;
 }
 
-nav ul li a:hover {
+nav ul li button {
+    text-decoration: none;
+    color: black;
+    transition: all 0.25s;
+    font-size: 14px;
+    border: 0px;
+    background: none;
+    font-family: 'Nanum Gothic', sans-serif, 'Dotum', 'Gulim', 'Arial', sans-serif;
+}
+
+nav ul li span { font-size: 15px; }
+
+nav ul li a:hover, nav ul li button:hover {
     color: orange;
     padding-bottom: 3px;
     border-bottom: 1px solid orange;

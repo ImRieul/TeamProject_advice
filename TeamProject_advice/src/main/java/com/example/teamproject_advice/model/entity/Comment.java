@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @AllArgsConstructor
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor
 @Entity
 @Data
 @Builder

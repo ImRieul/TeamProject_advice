@@ -10,6 +10,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor // 모든 변수를 포함하는 생성자
@@ -17,7 +18,7 @@ import java.util.List;
 @Data               // getter, setter
 @Entity             // Entity : 독립체, jpa가 관리하는 클래스, 데이터베이스의 column과 연결시켜줌
 @EntityListeners(AuditingEntityListener.class)
-@ToString(exclude = {"boardList", "boardCommentList"})      // exclude : 제외됨, ToString을 제외할 것들
+@ToString(exclude = {"boardList", "commentList", "roleList"})      // exclude : 제외됨, ToString을 제외할 것들
 @Builder            // 클래스를 생성할 때 변수의 값을 쌓아서 넣을 수 있음
 @Accessors(chain = true)        // setter 메서드를 쌓아서 사용 가능
 public class User {
@@ -36,6 +37,7 @@ public class User {
     private String color;
     private String myTemp;
     private String clotheStyle;
+    private boolean enabled;
 
     @CreatedDate
     private LocalDateTime createdAt;
@@ -50,9 +52,16 @@ public class User {
 
     // 1 : N
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-    private List<Board> boardList;
+    private List<Board> boardList = new ArrayList<>();
 
     // 1 : N
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-    private List<Comment> boardCommentList;
+    private List<Comment> commentList = new ArrayList<>();
+
+    @ManyToMany
+    @JoinTable(
+            name = "user_role",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id") )
+    private List<Role> roleList = new ArrayList<>();
 }
