@@ -36,6 +36,8 @@ user 테이블 column 추가, role, user_role 테이블 생성 : spring security
 ###### SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 ###### SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
+###### insert into role(name) values('ROLE_USER');
+
 
 ***
 ### 210912
