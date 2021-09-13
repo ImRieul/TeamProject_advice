@@ -16,7 +16,11 @@
 
 <body>
 <div class="mBox" layout:fragment="content">
-  <form class="form-horizontal" method="post" th:action="@{/user/registerAction.do}">
+  <div class="form-group alert alert-danger" th:if="${param.error}" role="alert">
+    이미 존재하는 계정입니다
+  </div>
+
+  <form class="form-horizontal" method="post" th:action="@{/user/register}">
     <div class="form-group">
       <label for="inputAccount" class="col-sm-2 control-label">계정</label>
       <div class="col-sm-10">
@@ -27,7 +31,7 @@
     <div class="form-group">
       <label for="inputPassword3" class="col-sm-2 control-label">비밀번호</label>
       <div class="col-sm-10">
-        <input name="pw" type="password" class="form-control" id="inputPassword3" placeholder="비밀번호를 입력해주세요">
+        <input name="password" type="password" class="form-control" id="inputPassword3" placeholder="비밀번호를 입력해주세요">
       </div>
     </div>
     
@@ -52,7 +56,7 @@
       <label for="inputPassword3" class="col-sm-2 control-label">Personal Color</label>
       <div class="col-sm-10">
         <select name="color" class="form-control">
-          <option>몰라요</option>
+          <option>잘 모름</option>
           <option>봄웜톤</option>
           <option>가을웜톤</option>
           <option>여름쿨톤</option>

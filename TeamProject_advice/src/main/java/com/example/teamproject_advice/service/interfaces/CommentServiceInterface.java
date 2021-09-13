@@ -9,14 +9,17 @@ import java.util.List;
 
 public interface CommentServiceInterface {
     Page<Comment> commentListPage(Board board, int page);
-    void commentWrite(Long boardId, Long commentId, String content);
+    void commentWrite(Long boardId, Long commentId, String account, String comment);
 
     String commentDelete(Long id);
 
     Pageable checkPageable(Pageable pageable);
     Comment findById(Long id);
-    List<Integer> paging(Pageable pageable, int totalPage);
 
     int commentListLastPage(Board board, String search);
     int returnPageNumber(Long id, int size);
+
+
+    // spring security
+    List<Boolean> checkCommentAccount(Page<Comment> page);
 }

@@ -1,9 +1,13 @@
 package com.example.teamproject_advice.service.implement;
 
+import com.example.teamproject_advice.model.entity.Role;
 import com.example.teamproject_advice.model.entity.User;
+import com.example.teamproject_advice.repository.RoleRepository;
 import com.example.teamproject_advice.repository.UserRepository;
 import com.example.teamproject_advice.service.interfaces.UserServiceInterface;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,7 +19,10 @@ import java.util.List;
 @Service
 public class UserService implements UserServiceInterface {
 
+    // @RequiredArgsConstructor를 쓰지 않고 Autowired를 써도 될 거 같다
     private final UserRepository userRepository;
+    private final RoleRepository roleRepository;
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public List<String> clotheStyleList() {
@@ -33,16 +40,26 @@ public class UserService implements UserServiceInterface {
         return list;
     }
 
+    // update spring security
     @Override
-    public void registerUser(User user) {
-        User createUser = user;
+    public User registerUser(User user) {
+        String password = passwordEncoder.encode(user.getPassword());
+        Role role = roleRepository.findById(1L).orElse(new Role().setId(1L));
 
-        user.setCreatedAt(LocalDateTime.now())
+
+
+        System.out.println("UserService - regitserUser : " + user);
+        user.setPassword(password)
+                .setEnabled(true)
+                .setCreatedAt(LocalDateTime.now())
                 .setCreatedBy("admin")
                 .setRegisteredAt(LocalDateTime.now())
-                .setStatus("exist");
+                .setStatus("exist")
+                .setRoleList(new ArrayList<>());
 
-        userRepository.save(user);
+        user.getRoleList().add(role);
+
+        return userRepository.save(user);
     }
 
     @Override
@@ -65,4 +82,6 @@ public class UserService implements UserServiceInterface {
 
         if ( user == null ) { return false; } else { return true; }
     }
+
+
 }

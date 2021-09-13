@@ -101,23 +101,16 @@ public class UserRepositoryTest extends TeamProjectAdviceApplicationTests {
         });
     }
 
-//    @Test
-//    public void userPasswordTest() {
-//        String str = "MocketHttpServletRequest:\n" +
-//                "        Http Method = GET\n" +
-//                "        Request URI = /user/login\n" +
-//                "         Parameters = {}\n" +
-//                "            Herders = []\n" +
-//                "               Body = <no charater encoding set>\n" +
-//                "      Session Attrs = {}\n" +
-//                "\n" +
-//                "Handler:\n" +
-//                "               Type = com.example.UserController\n" +
-//                "             Method = com.example.UserController#Login()\n" +
-//                "\n" +
-//                "Async:\n" +
-//                "      Async started = false";
-//        System.out.println(str);
-//    }
+
+    @Test
+    public void userEnabled() {
+        List<User> users = userRepository.findAll();
+
+        for ( User user : users ) {
+            user.setEnabled(true);
+
+            userRepository.save(user);
+        }
+    }
 
 }

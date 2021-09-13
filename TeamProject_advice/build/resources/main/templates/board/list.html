@@ -63,7 +63,7 @@
                 <th scope="col" class="tnone">NO.</th>
                 <th scope="col">제목</th>
                 <th scope="col">등록일</th>
-                <th scope="col" class="tnone">조회수</th>
+                <th scope="col" class="tnone">작성자</th>
                 </thead>
 
                 <tr th:if="${list.isEmpty()}">
@@ -76,7 +76,7 @@
                   <td class="tnone" th:text="${board.id}"></td>
                   <td class="left"><a href="#" th:href="|@{ /board/detail( id=${board.id}, page=${page.getPageNumber()}, size=${page.getPageSize()}, sort=${page.getSort()} )}|" th:text="${board.title}"></a></td>
                   <td class="tnone right" th:text="${#temporals.format(board.registeredAt, 'yyyy-MM-dd HH:mm')}"></td>
-                  <td th:text="${board.viewCount}"></td>
+                  <td th:text="${board.getUser().getAccount()}"></td>
                 </tr>
 
               </table>

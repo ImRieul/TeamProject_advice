@@ -2,22 +2,28 @@ package com.example.teamproject_advice.service.implement;
 
 import com.example.teamproject_advice.model.entity.Board;
 import com.example.teamproject_advice.model.entity.Comment;
+import com.example.teamproject_advice.model.entity.User;
 import com.example.teamproject_advice.repository.CommentRepository;
+import com.example.teamproject_advice.repository.UserRepository;
 import com.example.teamproject_advice.service.interfaces.CommentServiceInterface;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @RequiredArgsConstructor
 @Service
 public class CommentService implements CommentServiceInterface {
 
+    private final UserRepository userRepository;
     private final BoardService boardService;
     private final CommentRepository commentRepository;
     private final int pageSize = 10;
@@ -38,30 +44,29 @@ public class CommentService implements CommentServiceInterface {
 
 
     @Override
-    public void commentWrite(Long boardId, Long commentId, String content) {
+    public void commentWrite(Long boardId, Long commentId, String account, String comment) {
+        User user = userRepository.findByAccount(account);
         Board board = boardService.findById(boardId);
-        Comment comment;
+        Comment setComment = ( commentId == null )? new Comment() : findById(commentId);
 
         // 댓글 생성
-        if ( commentId == null ) {
-            comment = Comment.builder()
-                    .board(board)
-                    .comment(content)
-                    .createdAt(LocalDateTime.now())
-                    .createdBy("user")
-                    .registeredAt(LocalDateTime.now())
-                    .user(board.getUser())
-                    .build();
+        if ( setComment.getId() == null ) {
+            setComment.setBoard(board)
+                    .setUser(user)
+                    .setCreatedAt(LocalDateTime.now())
+                    .setCreatedBy("user")
+                    .setRegisteredAt(LocalDateTime.now());
         }
         // 댓글 수정
         else {
-            comment = findById(commentId);
-            comment.setComment(content)
+            setComment
                     .setUpdatedAt(LocalDateTime.now())
                     .setUpdatedBy("user");
         }
 
-        commentRepository.save(comment);
+        setComment.setComment(comment);
+
+        commentRepository.save(setComment);
     }
 
     @Override
@@ -88,11 +93,6 @@ public class CommentService implements CommentServiceInterface {
     }
 
     @Override
-    public List<Integer> paging(Pageable pageable, int totalPage) {
-        return null;
-    }
-
-    @Override
     public int commentListLastPage(Board board, String search) {
         Pageable pageable = PageRequest.of(0, pageSize, Sort.Direction.ASC, "id");
         Page<Comment> page = ( search == null )? commentRepository.findByBoard(board, pageable) : commentRepository.findByCommentContaining(search, pageable);
@@ -102,5 +102,20 @@ public class CommentService implements CommentServiceInterface {
     @Override
     public int returnPageNumber(Long id, int size) {
         return 0;
+    }
+
+    @Override
+    public List<Boolean> checkCommentAccount(Page<Comment> page) {
+        List<Boolean> checkList = new ArrayList<>();
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+        if ( page == null ) { return null; }
+
+        for ( Comment comment : page ) {
+            Boolean bo = comment.getUser().getAccount().equals(auth.getName());
+            checkList.add(bo);
+        }
+
+        return checkList;
     }
 }

@@ -1,6 +1,7 @@
 package com.example.teamproject_advice.service.implement;
 
 import com.example.teamproject_advice.model.entity.Board;
+import com.example.teamproject_advice.model.entity.User;
 import com.example.teamproject_advice.repository.BoardRepository;
 import com.example.teamproject_advice.repository.UserRepository;
 import com.example.teamproject_advice.service.interfaces.BoardServiceInterface;
@@ -58,31 +59,29 @@ public class BoardService implements BoardServiceInterface {
 
     // 게시글 생성, 수정
     @Override
-    public void boardWrite(Long userId, Long boardId, String title, String content) {
-        Board board;
+    public void boardWrite(String account, Board board) {
+        User user = userRepository.findByAccount(account);
+        Board setBoard = ( board.getId() == null )? new Board() : findById(board.getId());
+        setBoard.setUser(user);
 
         // 게시글 생성
-        if ( boardId == null ) {
-            board = Board.builder()
-                    .title(title)
-                    .content(content)
-                    .createdAt(LocalDateTime.now())
-                    .createdBy("user")
-                    .registeredAt(LocalDateTime.now())
-                    .viewCount(0L)
-                    .user(userRepository.findById(userId).orElse(null))
-                    .build();
+        if ( setBoard.getId() == null ) {
+            setBoard
+                    .setCreatedAt(LocalDateTime.now())
+                    .setCreatedBy("user")
+                    .setRegisteredAt(LocalDateTime.now())
+                    .setViewCount(0L);
         }
         // 게시글 수정
         else {
-            board = findById(boardId);
-            board.setTitle(title)
-                    .setContent(content)
-                    .setUpdatedAt(LocalDateTime.now())
+            setBoard.setUpdatedAt(LocalDateTime.now())
                     .setUpdatedBy("user");
         }
 
-        boardRepository.save(board);
+        setBoard.setTitle(board.getTitle())
+                .setContent(board.getContent());
+
+        boardRepository.save(setBoard);
     }
 
     // ========== 게시글 삭제 ==========
